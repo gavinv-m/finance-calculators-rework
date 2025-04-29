@@ -177,7 +177,7 @@
                         class="form-control"
                         id="purchasePrice"
                         placeholder="Enter amount"
-                        value="200000"
+                        value="0"
                       />
                       <label for="purchasePrice">Property Purchase Price</label>
                       <span class="error" id="errorPurchase"></span>
@@ -203,7 +203,7 @@
                         class="form-control"
                         id="renoCosts"
                         placeholder="Enter amount"
-                        value="50000"
+                        value="0"
                       />
                       <label for="renoCosts">Renovation Costs</label>
                       <span class="error" id="errorReno"></span>
@@ -228,7 +228,7 @@
                         class="form-control"
                         id="closingCosts"
                         placeholder="Enter amount"
-                        value="2"
+                        value="0"
                       />
                       <label for="closingCosts">Closing Costs</label>
                       <span class="error" id="errorClosingCosts"></span>
@@ -255,7 +255,7 @@
                         class="form-control"
                         id="holdingCosts"
                         placeholder="Enter amount"
-                        value="10000"
+                        value="0"
                       />
                       <label for="holdingCosts">Holding Costs</label>
                       <span class="error" id="errorHolding"></span>
@@ -279,7 +279,7 @@
                         class="form-control"
                         id="desiredProfitMargin"
                         placeholder="Enter Interest Rate"
-                        value="20"
+                        value="0"
                       />
                       <label for="desiredProfitMargin"
                         >Desired Profit Margin</label
@@ -308,7 +308,7 @@
                         class="form-control"
                         id="afterRepairValue"
                         placeholder="Enter amount"
-                        value="350000"
+                        value="0"
                       />
                       <label for="afterRepairValue">After Repair Value</label>
                       <span class="error" id="errorArv"></span>
@@ -332,7 +332,7 @@
                         class="form-control"
                         id="projectMonths"
                         placeholder="Enter Months"
-                        value="6"
+                        value="0"
                       />
                       <label for="projectMonths"
                         >Project Duration (Months)</label
@@ -384,7 +384,7 @@
                         class="form-control"
                         id="houseinterestRate"
                         placeholder="Enter Interest Rate"
-                        value="5"
+                        value="0"
                       />
                       <label for="houseinterestRate">Interest Rate</label>
                       <span class="error" id="errorhouseinterestRate"></span>
@@ -410,7 +410,7 @@
                         class="form-control"
                         id="houseLoanYear"
                         placeholder="Enter Loan Points"
-                        value="2"
+                        value="0"
                       />
                       <label for="houseLoanYear"> Loan Term (years):</label>
                       <span class="error" id="errorhouseLoanYear"></span>
@@ -434,7 +434,7 @@
                         class="form-control"
                         id="loanPoints"
                         placeholder="Enter Loan Points"
-                        value="1"
+                        value="0"
                       />
                       <label for="loanPoints">Loan Points</label>
                       <span class="error" id="errorLoanPoints"></span>
@@ -511,7 +511,7 @@
                         class="form-control"
                         id="downPaymentPercent"
                         placeholder="Enter Down Payment"
-                        value="20"
+                        value="0"
                       />
                       <label for="downPaymentPercent">Down Payment</label>
                       <span class="error" id="errorDownPayment"></span>
@@ -592,7 +592,7 @@
                         class="form-control"
                         id="resaleCosts"
                         placeholder="Enter Closing Costs"
-                        value="6"
+                        value="0"
                       />
                       <label for="resaleCosts"
                         >Resale Closing Costs (% of ARV)</label
@@ -619,7 +619,7 @@
                         class="form-control"
                         id="houseAnnualMaintenance"
                         placeholder="Enter Annual Property Taxes"
-                        value="1800"
+                        value="0"
                       />
                       <label for="houseAnnualMaintenance"
                         >Annual Maintenance</label
@@ -649,7 +649,7 @@
                         class="form-control"
                         id="houseAnnualUtilities"
                         placeholder="Enter Annual Property Taxes"
-                        value="2400"
+                        value="0"
                       />
                       <label for="houseAnnualUtilities">Annual Utilities</label>
                       <span class="error" id="errorhouseAnnualUtilities"></span>
@@ -674,7 +674,7 @@
                         class="form-control"
                         id="propertyTaxesHF"
                         placeholder="Enter Annual Property Taxes"
-                        value="3600"
+                        value="0"
                       />
                       <label for="propertyTaxesHF">Annual Property Taxes</label>
                       <span class="error" id="errorAnnualProperty"></span>
@@ -699,7 +699,7 @@
                         class="form-control"
                         id="insurance"
                         placeholder="Enter Annual Insurance"
-                        value="1200"
+                        value="0"
                       />
                       <label for="insurance">Annual Insurance</label>
                       <span class="error" id="errorAnnualProperty"></span>
@@ -1995,17 +1995,17 @@
 
     <script>
       function toggleMenu() {
-        var menu = document.getElementById("menu");
+        var menu = document.getElementById('menu');
         menu.style.display =
-          menu.style.display === "none" || menu.style.display === ""
-            ? "block"
-            : "none";
+          menu.style.display === 'none' || menu.style.display === ''
+            ? 'block'
+            : 'none';
       }
     </script>
     <script src="calculator.js"></script>
     <!-- tooltip js start -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         var tooltipTriggerList = document.querySelectorAll(
           '[data-bs-toggle="tooltip"]'
         );
@@ -2013,7 +2013,7 @@
         tooltipTriggerList.forEach(function (tooltipTriggerEl) {
           var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
 
-          tooltipTriggerEl.addEventListener("click", function () {
+          tooltipTriggerEl.addEventListener('click', function () {
             tooltip.show();
             setTimeout(() => tooltip.hide(), 2000); // Hide after 2 seconds
           });
@@ -2021,75 +2021,75 @@
       });
 
       document.querySelectorAll('input[type="number"]').forEach((input) => {
-        input.addEventListener("wheel", function (event) {
+        input.addEventListener('wheel', function (event) {
           event.preventDefault();
         });
       });
 
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         // Function to show only the selected class and its corresponding button
         function showAccordion(targetClass) {
-          const allClasses = ["house", "retire", "rental"];
-          const allButtons = ["pdfhouse", "pdfretire", "pdfrental"];
-          const allprint = ["printhouse", "printretire", "printrent"];
+          const allClasses = ['house', 'retire', 'rental'];
+          const allButtons = ['pdfhouse', 'pdfretire', 'pdfrental'];
+          const allprint = ['printhouse', 'printretire', 'printrent'];
 
           allClasses.forEach((cls) => {
-            document.querySelector("." + cls).style.display =
-              cls === targetClass ? "block" : "none";
+            document.querySelector('.' + cls).style.display =
+              cls === targetClass ? 'block' : 'none';
           });
 
           allButtons.forEach((btn, index) => {
-            document.querySelector("." + btn).style.display =
-              allClasses[index] === targetClass ? "block" : "none";
+            document.querySelector('.' + btn).style.display =
+              allClasses[index] === targetClass ? 'block' : 'none';
           });
 
           allprint.forEach((btn, index) => {
-            document.querySelector("." + btn).style.display =
-              allClasses[index] === targetClass ? "block" : "none";
+            document.querySelector('.' + btn).style.display =
+              allClasses[index] === targetClass ? 'block' : 'none';
           });
         }
 
         // Set initial state
-        showAccordion("house");
+        showAccordion('house');
 
         // Adding event listeners to toggle respective elements
         document
-          .getElementById("house-open")
-          .addEventListener("click", function () {
-            showAccordion("house");
+          .getElementById('house-open')
+          .addEventListener('click', function () {
+            showAccordion('house');
           });
         document
-          .getElementById("retirement-open")
-          .addEventListener("click", function () {
-            showAccordion("retire");
+          .getElementById('retirement-open')
+          .addEventListener('click', function () {
+            showAccordion('retire');
           });
         document
-          .getElementById("rental-open")
-          .addEventListener("click", function () {
-            showAccordion("rental");
+          .getElementById('rental-open')
+          .addEventListener('click', function () {
+            showAccordion('rental');
           });
       });
 
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         // Show house chart on page load
-        showChart("housecharts");
+        showChart('housecharts');
 
         function showChart(chartClass) {
           // Hide all chart divs
-          document.querySelectorAll(".charts").forEach((div) => {
-            div.style.display = "none";
+          document.querySelectorAll('.charts').forEach((div) => {
+            div.style.display = 'none';
           });
 
           // Show the selected chart
-          const target = document.querySelector("." + chartClass);
+          const target = document.querySelector('.' + chartClass);
           if (target) {
-            target.style.display = "block";
+            target.style.display = 'block';
           }
 
           // If it's the rental chart, also call updateTableRange()
           if (
-            chartClass === "rentalcharts" &&
-            typeof updateTableRange === "function"
+            chartClass === 'rentalcharts' &&
+            typeof updateTableRange === 'function'
           ) {
             updateTableRange();
           }
@@ -2097,32 +2097,32 @@
 
         // Button click handlers
         document
-          .getElementById("house-open")
-          .addEventListener("click", function () {
-            showChart("housecharts");
+          .getElementById('house-open')
+          .addEventListener('click', function () {
+            showChart('housecharts');
           });
 
         document
-          .getElementById("rental-open")
-          .addEventListener("click", function () {
-            showChart("rentalcharts");
+          .getElementById('rental-open')
+          .addEventListener('click', function () {
+            showChart('rentalcharts');
           });
 
         document
-          .getElementById("retirement-open")
-          .addEventListener("click", function () {
-            showChart("retirecharts");
+          .getElementById('retirement-open')
+          .addEventListener('click', function () {
+            showChart('retirecharts');
           });
       });
     </script>
     <script>
-      const select = document.getElementById("timeDuration");
+      const select = document.getElementById('timeDuration');
       const maxYears = 40;
 
       for (let i = 1; i <= maxYears; i++) {
-        const option = document.createElement("option");
+        const option = document.createElement('option');
         option.value = i;
-        option.textContent = `${i} Year${i > 1 ? "s" : ""}`;
+        option.textContent = `${i} Year${i > 1 ? 's' : ''}`;
         if (i === 1) option.selected = true;
         select.appendChild(option);
       }
