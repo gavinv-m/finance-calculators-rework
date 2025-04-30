@@ -84,7 +84,6 @@ function calculateHouseFlip() {
     parseFloat(document.getElementById('houseAnnualMaintenance').value) || 0;
   let annualUtilities =
     parseFloat(document.getElementById('houseAnnualUtilities').value) || 0;
-  document.querySelector('.housecharts').style.display = 'block';
 
   let downPaymentType = document.getElementById('downPaymentType').value;
 
@@ -534,8 +533,6 @@ function calculateRetirement() {
   let currentRealEstateEquity = document.getElementById(
     'currentRealEstateEquity'
   );
-
-  document.querySelector('.retirecharts').style.display = 'block';
 
   // ✅ Error messages
   let errors = {
@@ -1121,7 +1118,6 @@ function calculateRentalProperty() {
     rentGrowth: document.getElementById('errorRentGrowth'),
     closingCosts: document.getElementById('errorClosingCostsRent'),
   };
-  document.querySelector('.rentalcharts').style.display = 'block';
   // Clear previous error messages
   Object.values(errors).forEach((error) => (error.innerText = ''));
 
