@@ -197,7 +197,7 @@ input::-webkit-inner-spin-button {
   font-weight: 600;
 }
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 .form-control {
@@ -217,7 +217,7 @@ input[type="number"] {
   filter: brightness(0) invert(1);
 }
 .tab-content h1::after {
-  content: "";
+  content: '';
   border-bottom: 2px solid #000;
   position: absolute;
   width: 40%;

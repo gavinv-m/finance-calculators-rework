@@ -114,7 +114,7 @@ function calculateHouseFlip() {
   let totalMortgagePaid = monthlyMortgagePayment * months;
   let principalPaid = 0;
   let interestPaid = totalMortgagePaid;
-  loanInterest = interestPaid;
+  loanInterest = interestPaid; // TODO:
   let totalProjectCost =
     purchase +
     reno +
