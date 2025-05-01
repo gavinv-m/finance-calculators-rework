@@ -1,3 +1,5 @@
+import { Chart } from 'chart.js';
+
 export default function createProjectCostBreakdownChart(data) {
   const ctx = document
     .getElementById('projectCostBreakdownChart')

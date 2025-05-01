@@ -438,6 +438,7 @@ function createProjectCostBreakdownChart(data) {
   });
 }
 
+// TODO: Delete createARVDistributionChart
 function createARVDistributionChart(data) {
   const ctx = document.getElementById('arvDistributionChart').getContext('2d');
 

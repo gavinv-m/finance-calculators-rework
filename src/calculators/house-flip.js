@@ -2,6 +2,7 @@ import formatNumber from '../utils/format-number';
 import formatNumberPercent from '../utils/format-number-percent';
 import resetCanvas from '../chart-utils/reset-canvas';
 import createProjectCostBreakdownChart from '../charts/project-cost-breakdown-chart';
+import createARVDistributionChart from '../charts/arv-distribution-chart';
 
 export default function calculateHouseFlip() {
   let purchase =
