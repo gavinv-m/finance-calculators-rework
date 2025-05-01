@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   calculateRentalProperty();
 });
 
+// TODO: Delete formatNumber
 function formatNumber(value) {
   let formattedValue =
     value % 1 === 0
@@ -39,6 +40,8 @@ function formatNumber(value) {
 
   return value < 0 ? `- $${formattedValue}` : `$${formattedValue}`;
 }
+
+// TODO: Delete formatNumberPercent
 function formatNumberPercent(value) {
   return value % 1 === 0
     ? value.toLocaleString()
@@ -316,6 +319,7 @@ function calculateHouseFlip() {
   });
 }
 
+// TODO: Delete resetCanvas
 function resetCanvas(id) {
   let canvasWrapper = document.getElementById(id).parentNode;
   canvasWrapper.innerHTML = `<canvas id="${id}"></canvas>`;
@@ -323,6 +327,7 @@ function resetCanvas(id) {
 
 Chart.register(ChartDataLabels);
 
+// TODO: Delete createProjectCostBreakdownChart
 function createProjectCostBreakdownChart(data) {
   const ctx = document
     .getElementById('projectCostBreakdownChart')
