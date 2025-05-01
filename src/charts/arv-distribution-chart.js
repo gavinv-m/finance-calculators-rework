@@ -1,4 +1,6 @@
-import { Chart } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function createARVDistributionChart(data) {
   const ctx = document.getElementById('arvDistributionChart').getContext('2d');
