@@ -100,7 +100,6 @@ export default function calculateHouseFlip() {
     (downPaymentType !== 'purchaseAndReno' ? reno : 0) +
     holding +
     closing +
-    resaleCosts +
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
@@ -108,7 +107,7 @@ export default function calculateHouseFlip() {
 
   // ✅ Profit Calculation
   let grossProfit = arv - purchase;
-  let netProfit = arv - totalInvestment;
+  let netProfit = arv - totalInvestment - resaleCosts;
 
   // ✅ Profit Margin & Cash-on-Cash Return
   let profitMargin = arv > 0 ? (netProfit / arv) * 100 : 0;
