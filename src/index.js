@@ -3,6 +3,7 @@ import calculateHouseFlip from './calculators/house-flip';
 import calculateRetirement from './calculators/calculate-retirement';
 import calculateRentalProperty from './calculators/rental';
 import updateTableRange from './utils/update-table-range';
+import populateYearsDropdown from './utils/populate-years-dropdown';
 import initializePdfListeners from '../downloaders/pdf-event-listeners';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -38,26 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
   calculateHouseFlip();
   calculateRetirement();
   calculateRentalProperty();
+
+  // Populate rental years dropdown
+  populateYearsDropdown();
 });
-
-// Function to populate the years dropdown
-function populateYearsDropdown() {
-  const select = document.getElementById('years_tbl');
-  select.innerHTML = ''; // Clear existing options
-
-  for (let i = 1; i <= 30; i++) {
-    const option = document.createElement('option');
-    option.value = i;
-    option.textContent = `${i} ${i === 1 ? 'Year' : 'Years'}`;
-
-    // Set 10 years as the default selected value
-    if (i === 1) {
-      option.selected = true;
-    }
-
-    select.appendChild(option);
-  }
-}
-
-// Call the function to populate the dropdown on page load
-window.onload = populateYearsDropdown;
