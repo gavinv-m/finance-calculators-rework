@@ -96,7 +96,7 @@ export default function calculateHouseFlip() {
     proratedInsurance;
 
   let totalCashInvested =
-    downPaymentBase +
+    downPayment +
     holding +
     closing +
     resaleCosts +
