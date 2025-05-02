@@ -45,9 +45,7 @@ export default function calculateHouseFlip() {
 
   let downPaymentBase =
     downPaymentType === 'purchaseAndReno' ? purchase + reno : purchase;
-  let closingPercent =
-    parseFloat(document.getElementById('closingCosts').value) || 0;
-  let closing = (downPaymentBase * closingPercent) / 100;
+  let closing = parseFloat(document.getElementById('closingCosts').value) || 0;
   let downPayment = (downPaymentBase * downPaymentPercent) / 100;
   let monthlyRate = interestRate / 100 / 12;
   let loanAmount =
@@ -93,15 +91,21 @@ export default function calculateHouseFlip() {
     loanFees +
     gapFundingFees +
     proratedTaxes +
-    proratedInsurance;
+    proratedInsurance +
+    proratedMaintenance +
+    proratedUtilities;
 
   let totalCashInvested =
     downPayment +
+    (downPaymentType !== 'purchaseAndReno' ? reno : 0) +
     holding +
     closing +
     resaleCosts +
     proratedTaxes +
-    proratedInsurance;
+    proratedInsurance +
+    proratedMaintenance +
+    proratedUtilities;
+
   // ✅ Profit Calculation
   let grossProfit = arv - purchase;
   let netProfit = arv - totalInvestment;
