@@ -78,6 +78,9 @@ export default function getTableData(year, returnData = false) {
     };
   }
 
+  return;
+  // Elements below don't exist in the DOM
+
   // Update UI
   document.getElementById('year_b').innerHTML = year;
   document.getElementById('gross_rent').innerText = `$${grossRentIncome.toFixed(
