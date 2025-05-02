@@ -1,3 +1,7 @@
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 export default function renderCashFlowPieChart(
   mortgagePaymentAnnual,
   operatingExpenses,
