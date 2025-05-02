@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
   calculateRentalProperty();
 });
 
-Chart.register(ChartDataLabels);
-
 // function getTableData(year) {
 //   document.getElementById("year_b").innerHTML = year;
 //   // Get values and convert to numbers
