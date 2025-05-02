@@ -171,8 +171,7 @@ export default function calculateHouseFlip() {
     proratedTaxes +
     proratedInsurance;
 
-  let maxPurchasePrice =
-    (arv - allOtherCosts) / (1 + desiredProfitMargin / 100);
+  let maxPurchasePrice = arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
 
   // ✅ Display Results
   // document.getElementById("grossProfit").innerText = formatNumber(grossProfit);
