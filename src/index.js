@@ -2,7 +2,6 @@ import './style.css';
 import calculateHouseFlip from './calculators/house-flip';
 import calculateRetirement from './calculators/calculate-retirement';
 import calculateRentalProperty from './calculators/rental';
-import getTableData from './utils/table-data';
 import updateTableRange from './utils/update-table-range';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -497,11 +496,6 @@ function populateYearsDropdown() {
     select.appendChild(option);
   }
 }
-
-document.getElementById('years_tbl').addEventListener('change', function () {
-  let selectedValue = this.value;
-  getTableData(selectedValue);
-});
 
 // Call the function to populate the dropdown on page load
 window.onload = populateYearsDropdown;
