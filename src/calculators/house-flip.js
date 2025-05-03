@@ -66,6 +66,7 @@ export default function calculateHouseFlip() {
         (1 - Math.pow(1 + monthlyRate, -totalPayments))
       : 0;
   let totalMortgagePaid = monthlyMortgagePayment * months;
+
   let interestPaid = interestProjectDuration(
     loanAmount,
     monthlyMortgagePayment,
@@ -79,7 +80,7 @@ export default function calculateHouseFlip() {
     holding +
     closing +
     resaleCosts +
-    loanInterest +
+    totalMortgagePaid +
     loanFees +
     proratedTaxes +
     proratedInsurance +
@@ -94,7 +95,7 @@ export default function calculateHouseFlip() {
     reno +
     holding +
     closing +
-    loanInterest +
+    totalMortgagePaid +
     loanFees +
     gapFundingFees +
     proratedTaxes +
@@ -107,6 +108,7 @@ export default function calculateHouseFlip() {
     (downPaymentType !== 'purchaseAndReno' ? reno : 0) +
     holding +
     closing +
+    totalMortgagePaid +
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
@@ -179,7 +181,7 @@ export default function calculateHouseFlip() {
     holding +
     closing +
     resaleCosts +
-    loanInterest +
+    totalMortgagePaid +
     loanFees +
     gapFundingFees +
     proratedTaxes +
