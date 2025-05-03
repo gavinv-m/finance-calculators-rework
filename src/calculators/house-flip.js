@@ -3,6 +3,7 @@ import formatNumberPercent from '../utils/format-number-percent';
 import resetCanvas from '../chart-utils/reset-canvas';
 import createProjectCostBreakdownChart from '../charts/project-cost-breakdown-chart';
 import createARVDistributionChart from '../charts/arv-distribution-chart';
+import interestProjectDuration from '../utils/interest-project-duration';
 
 export default function calculateHouseFlip() {
   let purchase =
@@ -65,8 +66,12 @@ export default function calculateHouseFlip() {
         (1 - Math.pow(1 + monthlyRate, -totalPayments))
       : 0;
   let totalMortgagePaid = monthlyMortgagePayment * months;
-  let principalPaid = 0;
-  let interestPaid = totalMortgagePaid;
+  let interestPaid = interestProjectDuration(
+    loanAmount,
+    monthlyMortgagePayment,
+    months,
+    monthlyRate
+  );
   let loanInterest = interestPaid;
   let totalProjectCost =
     purchase +
