@@ -108,7 +108,8 @@ export default function calculateHouseFlip() {
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
-    proratedUtilities;
+    proratedUtilities +
+    loanFees;
 
   // ✅ Profit Calculation
   let grossProfit = arv - purchase;
