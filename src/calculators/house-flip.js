@@ -124,13 +124,6 @@ export default function calculateHouseFlip() {
   let cashOnCashReturn =
     totalCashInvested > 0 ? (netProfit / totalCashInvested) * 100 : 0;
 
-  // ✅ Break-even Years Calculation
-  let monthlyRentalProfit = (arv * 0.01 - holding / months).toFixed(2);
-  let breakEvenYears =
-    monthlyRentalProfit > 0
-      ? (netProfit / (monthlyRentalProfit * 12)).toFixed(2)
-      : 'N/A';
-
   let totalHoldingExpenses =
     holding +
     proratedTaxes +
@@ -139,6 +132,17 @@ export default function calculateHouseFlip() {
     proratedUtilities +
     loanInterest +
     gapFundingFees;
+  console.log(totalHoldingExpenses);
+
+  // ✅ Break-even Years Calculation
+  let monthlyRentalProfit = (
+    arv * 0.01 -
+    totalHoldingExpenses / months
+  ).toFixed(2);
+  let breakEvenYears =
+    Number(monthlyRentalProfit) > 0 && netProfit > 0
+      ? (netProfit / (Number(monthlyRentalProfit) * 12)).toFixed(2)
+      : 'N/A';
 
   let monthlyHoldingCost =
     months > 0 ? (totalHoldingExpenses / months).toFixed(2) : 0;
