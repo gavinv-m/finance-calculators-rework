@@ -153,7 +153,8 @@ export default function calculateHouseFlip() {
   let projection = (netProfit * 0.9).toFixed(2); // Projection at 90% of the net profit
 
   // ✅ Deal? Logic
-  let deal = profitMargin >= 10 && netProfit > 0 ? 'YES' : 'NO';
+  let deal =
+    profitMargin >= desiredProfitMargin && netProfit > 0 ? 'YES' : 'NO';
   let requiredARV =
     desiredProfitMargin > 0
       ? totalInvestment / (1 - desiredProfitMargin / 100)
@@ -263,10 +264,8 @@ export default function calculateHouseFlip() {
   let dealCarddhead = document.querySelector('.dealCarddhead');
   document.getElementById('dealStatus').style.color =
     deal === 'YES' ? 'black' : 'black';
-  dealCarddhead.style.color =
-    rentalVsFlip !== 'N/A' && rentalVsFlip < 5 ? 'black' : '#d0b870'; // gold if profit, red if loss
-  dealCardd.style.background =
-    rentalVsFlip !== 'N/A' && rentalVsFlip < 5 ? '#d0b870' : '#f86d6d';
+  dealCarddhead.style.color = deal === 'YES' ? 'black' : '#d0b870'; // gold if profit, red if loss
+  dealCardd.style.background = deal === 'YES' ? '#d0b870' : '#f86d6d';
   // ✅ Reset Charts Before Rendering
   resetCanvas('projectCostBreakdownChart');
   resetCanvas('arvDistributionChart');
