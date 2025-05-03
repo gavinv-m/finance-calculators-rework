@@ -82,7 +82,9 @@ export default function calculateHouseFlip() {
     loanInterest +
     loanFees +
     proratedTaxes +
-    proratedInsurance;
+    proratedInsurance +
+    proratedMaintenance +
+    proratedUtilities;
   // **Corrected Investment Calculation**
   let gapCosts = totalProjectCost - (loanAmount + downPayment);
   let gapFundingFees = gapCosts > 0 ? (gapCosts * gapFundingRate) / 100 : 0;
@@ -163,7 +165,9 @@ export default function calculateHouseFlip() {
     loanFees +
     gapFundingFees +
     proratedTaxes +
-    proratedInsurance;
+    proratedInsurance +
+    proratedMaintenance +
+    proratedUtilities;
 
   let targetNetProfit =
     (totalInvestmentExcludingPurchase + purchase) * (desiredProfitMargin / 100);
@@ -178,7 +182,9 @@ export default function calculateHouseFlip() {
     loanFees +
     gapFundingFees +
     proratedTaxes +
-    proratedInsurance;
+    proratedInsurance +
+    proratedMaintenance +
+    proratedUtilities;
 
   let maxPurchasePrice = arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
 
