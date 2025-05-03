@@ -109,6 +109,7 @@ export default function calculateHouseFlip() {
     holding +
     closing +
     totalMortgagePaid +
+    gapFundingFees +
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
@@ -132,7 +133,6 @@ export default function calculateHouseFlip() {
     proratedUtilities +
     loanInterest +
     gapFundingFees;
-  console.log(totalHoldingExpenses);
 
   // ✅ Break-even Years Calculation
   let monthlyRentalProfit = (
