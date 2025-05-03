@@ -145,7 +145,7 @@ export default function calculateHouseFlip() {
   // ✅ Flipping vs. Rental Analysis
   let rentalVsFlip =
     netProfit > 0 && monthlyRent > 0
-      ? (netProfit / (monthlyRent * 12)).toFixed(2)
+      ? (netProfit / monthlyRent).toFixed(2)
       : 'N/A';
   // ✅ Profit Min % and $ Calculation
   let profitMinPercent = (profitMargin * 0.8).toFixed(2); // Assuming 80% of profit margin as min
@@ -202,8 +202,11 @@ export default function calculateHouseFlip() {
   document.getElementById('breakEvenYears').innerText = breakEvenYears;
   document.getElementById('rentalVsFlip').innerText =
     rentalVsFlip !== 'N/A'
-      ? `${rentalVsFlip} years to match flip profit with rental income.`
+      ? rentalVsFlip > months
+        ? `Best to flip. ${rentalVsFlip} rental months to match flip profit.`
+        : `Best to rent. ${rentalVsFlip} rental months to match flip profit.`
       : 'N/A';
+
   // document.getElementById("profitMinPercent").innerText = `${profitMinPercent}%`;
   // document.getElementById("profitMinDollar").innerText = `${formatNumber(profitMinDollar)}`;
   // document.getElementById("projection").innerText = `${formatNumber(projection)}`;
@@ -250,11 +253,11 @@ export default function calculateHouseFlip() {
   let rvfcard = document.querySelector('.rvfcard');
   let rvfcardhead = document.querySelector('.rvfcardhead');
   rentalVsFlipEl.style.color =
-    rentalVsFlip !== 'N/A' && rentalVsFlip < 5 ? 'black' : 'black';
+    rentalVsFlip !== 'N/A' && rentalVsFlip > months ? 'black' : 'black';
   rvfcardhead.style.color =
-    rentalVsFlip !== 'N/A' && rentalVsFlip < 5 ? 'black' : '#d0b870'; // gold if profit, red if loss
+    rentalVsFlip !== 'N/A' && rentalVsFlip > months ? 'black' : '#d0b870'; // gold if profit, red if loss
   rvfcard.style.background =
-    rentalVsFlip !== 'N/A' && rentalVsFlip < 5 ? '#d0b870' : '#f86d6d';
+    rentalVsFlip !== 'N/A' && rentalVsFlip > months ? '#d0b870' : '#f86d6d';
 
   let dealCardd = document.querySelector('.dealCardd');
   let dealCarddhead = document.querySelector('.dealCarddhead');
