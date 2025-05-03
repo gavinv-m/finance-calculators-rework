@@ -138,7 +138,6 @@ export default function calculateHouseFlip() {
     proratedMaintenance +
     proratedUtilities +
     loanInterest +
-    loanFees +
     gapFundingFees;
 
   let monthlyHoldingCost =
