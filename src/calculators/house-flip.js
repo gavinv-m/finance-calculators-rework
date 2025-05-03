@@ -222,7 +222,7 @@ export default function calculateHouseFlip() {
   }
   // document.getElementById("requiredARV").innerText = formatNumber(requiredARV);
   document.getElementById('maxPurchasePrice').innerText =
-    formatNumber(maxPurchasePrice);
+    maxPurchasePrice > 0 ? formatNumber(maxPurchasePrice) : 0;
 
   // ✅ Color Code Cards
   // let grossProfitCard = document.querySelector(".grossProfitcard");
