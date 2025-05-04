@@ -792,6 +792,32 @@
                       </div>
                     </div>
                     <div class="d-flex gap-2">
+                      <div class="mt-3">#</div>
+                      <div class="form-floating mb-3">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="expectedLifespan"
+                          placeholder="Enter amount"
+                          value="90"
+                          min="28"
+                          max="130"
+                        />
+                        <label for="expectedLifespan">Expected Lifespan</label>
+                        <span class="error" id="errorExpectedLifespan"></span>
+                        <div class="absolute input-circle">
+                          <span
+                            type="button"
+                            class="btn-custom"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-original-title="Enter Your Expected Lifespan"
+                            >i</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex gap-2">
                       <div class="mt-3">$</div>
                       <div class="form-floating mb-3">
                         <input

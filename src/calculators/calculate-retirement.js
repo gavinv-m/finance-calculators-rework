@@ -5,6 +5,7 @@ import renderIncomeSourcePie from '../charts/income-source-chart';
 export default function calculateRetirement() {
   let currentAge = document.getElementById('currentAge');
   let retirementAge = document.getElementById('retirementAge');
+  let expectedLifespan = document.getElementById('expectedLifespan');
   let currentSavings = document.getElementById('currentSavings');
   let monthlyContributions = document.getElementById('monthlyContributions');
   let annualReturn = document.getElementById('annualReturn');
@@ -30,6 +31,7 @@ export default function calculateRetirement() {
   let errors = {
     currentAge: document.getElementById('errorCurrentAge'),
     retirementAge: document.getElementById('errorRetirementAge'),
+    expectedLifespan: document.getElementById('errorExpectedLifespan'),
     currentSavings: document.getElementById('errorCurrentSavings'),
     monthlyContributions: document.getElementById('errorMonthlyContributions'),
     annualReturn: document.getElementById('errorAnnualReturn'),
@@ -73,6 +75,14 @@ export default function calculateRetirement() {
   // ✅ Validate all inputs
   validateInput(currentAge, errors.currentAge, 'Current Age', 18, 100);
   validateInput(retirementAge, errors.retirementAge, 'Retirement Age', 18, 100);
+  validateInput(
+    expectedLifespan,
+    errors.expectedLifespan,
+    'Expected Lifespan',
+    parseInt(currentAge.value, 10) || 18,
+    120
+  );
+
   validateInput(currentSavings, errors.currentSavings, 'Current Savings', 0);
   validateInput(
     monthlyContributions,
@@ -292,24 +302,23 @@ export default function calculateRetirement() {
   let yearlyWithdrawal = adjustedIncome;
   console.log(`Adjusted income: ${adjustedIncome}`);
 
-  let yearsArray = [];
-  let balanceArray = [];
-
   while (remainingBalance > 0) {
-    yearsArray.push(withdrawalYears);
-    balanceArray.push(remainingBalance);
-
+    console.log(`Remaining balance before withdrawal: ${remainingBalance}`);
     withdrawalYears++;
 
     // Prevent infinite loops
     if (withdrawalYears > 100) break;
 
     remainingBalance -= yearlyWithdrawal;
+    console.log(`Remaining balance after withdrawal: ${remainingBalance}`);
     remainingBalance *= 1 + (parseFloat(annualReturn.value) || 0) / 100;
     yearlyWithdrawal *= 1 + (parseFloat(inflationRate.value) || 0) / 100;
+    console.log(`Yearly withdrawal: ${yearlyWithdrawal}`);
+    console.log(`Remaining balance after interest: ${remainingBalance}`);
   }
 
-  let expectedLifespan = 90;
+  expectedLifespan = expectedLifespan.value;
+  console.log(expectedLifespan);
   let retirementYears = expectedLifespan - parseInt(retirementAge.value);
   let shortfallSurplusDiv = document.querySelector('.short');
   let shortfallSurplus;
