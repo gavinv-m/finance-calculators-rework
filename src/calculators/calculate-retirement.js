@@ -323,7 +323,11 @@ export default function calculateRetirement() {
   let shortfallSurplusDiv = document.querySelector('.short');
   let shortfallSurplus;
 
-  if (withdrawalYears >= retirementYears) {
+  if (!withdrawalYears || !retirementYears) {
+    shortfallSurplus = '';
+    shortfallSurplusDiv.style.backgroundColor = '#FFF';
+    document.querySelector('.shortcap').style.color = '';
+  } else if (withdrawalYears >= retirementYears) {
     shortfallSurplus = 'Surplus (Funds last throughout retirement)';
     shortfallSurplusDiv.style.backgroundColor = '#d0b870';
     document.querySelector('.shortcap').style.color = 'black';
