@@ -165,9 +165,10 @@ export default function calculateRetirement() {
     );
 
   let fvContributions =
-    (parseFloat(monthlyContributions.value) || 0) *
-    ((Math.pow(1 + r, t) - 1) / r) *
-    (1 + r);
+    r !== 0
+      ? (parseFloat(monthlyContributions.value) || 0) *
+        (((Math.pow(1 + r, t) - 1) / r) * (1 + r))
+      : 0;
 
   // ✅ Stock and Real Estate appreciation (Avoid NaN)
   let fvStock =
@@ -187,7 +188,9 @@ export default function calculateRetirement() {
   let lifeInsuranceMonthly =
     parseFloat(lifeInsuranceMonthlyContributions.value) || 0;
   let fvLifeInsuranceContributions =
-    lifeInsuranceMonthly * ((Math.pow(1 + r, t) - 1) / r) * (1 + r);
+    r !== 0
+      ? lifeInsuranceMonthly * ((Math.pow(1 + r, t) - 1) / r) * (1 + r)
+      : 0;
   let fvWholeLifeInsurance =
     (parseFloat(wholeLifeInsurance.value) || 0) + fvLifeInsuranceContributions;
 
@@ -202,10 +205,12 @@ export default function calculateRetirement() {
   if (mortgageEndYears < yearsToRetirement) {
     const remainingYears = yearsToRetirement - mortgageEndYears;
     const futureExtraSavings =
-      monthlyPayment *
-      12 *
-      ((Math.pow(1 + r, remainingYears * n) - 1) / r) *
-      (1 + r);
+      r !== 0
+        ? monthlyPayment *
+          12 *
+          ((Math.pow(1 + r, remainingYears * n) - 1) / r) *
+          (1 + r)
+        : 0;
     totalSavings += isNaN(futureExtraSavings) ? 0 : futureExtraSavings;
   }
 
@@ -251,15 +256,19 @@ export default function calculateRetirement() {
       const extraMonthly = monthlyPayment;
       const extraYears = extraMonths / 12;
       extraInvestmentValue =
-        extraMonthly *
-        12 *
-        ((Math.pow(1 + r, extraYears * n) - 1) / r) *
-        (1 + r);
+        r !== 0
+          ? extraMonthly *
+            12 *
+            ((Math.pow(1 + r, extraYears * n) - 1) / r) *
+            (1 + r)
+          : 0;
     }
 
     // 🧠 Insurance + extra investment FV
     const insuranceContributionFV =
-      lifeInsuranceMonthly * ((Math.pow(1 + r, i * n) - 1) / r) * (1 + r);
+      r !== 0
+        ? lifeInsuranceMonthly * ((Math.pow(1 + r, i * n) - 1) / r) * (1 + r)
+        : 0;
     const totalInsuranceValue =
       (parseFloat(wholeLifeInsurance.value) || 0) + insuranceContributionFV;
 
