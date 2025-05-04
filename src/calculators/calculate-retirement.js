@@ -288,7 +288,9 @@ export default function calculateRetirement() {
   // ✅ Withdrawal Simulation
   let withdrawalYears = 0;
   let remainingBalance = totalSavings;
+  console.log(`Total Savings: ${totalSavings}`);
   let yearlyWithdrawal = adjustedIncome;
+  console.log(`Adjusted income: ${adjustedIncome}`);
 
   let yearsArray = [];
   let balanceArray = [];
@@ -339,9 +341,15 @@ export default function calculateRetirement() {
   document.getElementById('annualWithdrawal').innerHTML = `${formatNumber(
     adjustedIncome
   )}`;
-  document.getElementById('yearsUntilDepletion').innerHTML = `${
-    isNaN(withdrawalYears) ? 'N/A' : withdrawalYears
-  }`;
+
+  // Only display years until depletion if desired income filled
+  if (desiredIncome.value && inflationRate.value) {
+    document.getElementById('yearsUntilDepletion').innerHTML = `${
+      isNaN(withdrawalYears) ? 'N/A' : withdrawalYears
+    }`;
+  } else {
+    document.getElementById('yearsUntilDepletion').innerHTML = '';
+  }
   document.getElementById('shortfallSurplus').innerHTML = isNaN(withdrawalYears)
     ? 'N/A'
     : shortfallSurplus;
