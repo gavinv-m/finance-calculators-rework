@@ -201,8 +201,9 @@ export default function calculateRetirement() {
     r !== 0
       ? lifeInsuranceMonthly * ((Math.pow(1 + r, t) - 1) / r) * (1 + r)
       : 0;
-  let fvWholeLifeInsurance =
-    (parseFloat(wholeLifeInsurance.value) || 0) + fvLifeInsuranceContributions;
+  let currentWholeLifeValue = parseFloat(wholeLifeInsurance.value) || 0;
+  let fvWholeLifeLumpSum = currentWholeLifeValue * Math.pow(1 + r, t);
+  let fvWholeLifeInsurance = fvWholeLifeLumpSum + fvLifeInsuranceContributions;
 
   let totalSavings =
     (isNaN(fvCurrentSavings) ? 0 : fvCurrentSavings) +
@@ -300,7 +301,7 @@ export default function calculateRetirement() {
   let remainingBalance = totalSavings;
   console.log(`Total Savings: ${totalSavings}`);
   let yearlyWithdrawal = adjustedIncome;
-  console.log(`Adjusted income: ${adjustedIncome}`);
+  // console.log(`Adjusted income: ${adjustedIncome}`);
 
   while (remainingBalance > 0) {
     console.log(`Remaining balance before withdrawal: ${remainingBalance}`);
@@ -310,20 +311,19 @@ export default function calculateRetirement() {
     if (withdrawalYears > 100) break;
 
     remainingBalance -= yearlyWithdrawal;
-    console.log(`Remaining balance after withdrawal: ${remainingBalance}`);
+    // console.log(`Remaining balance after withdrawal: ${remainingBalance}`);
     remainingBalance *= 1 + (parseFloat(annualReturn.value) || 0) / 100;
     yearlyWithdrawal *= 1 + (parseFloat(inflationRate.value) || 0) / 100;
-    console.log(`Yearly withdrawal: ${yearlyWithdrawal}`);
-    console.log(`Remaining balance after interest: ${remainingBalance}`);
+    // console.log(`Yearly withdrawal: ${yearlyWithdrawal}`);
+    // console.log(`Remaining balance after interest: ${remainingBalance}`);
   }
 
   expectedLifespan = expectedLifespan.value;
-  console.log(expectedLifespan);
   let retirementYears = expectedLifespan - parseInt(retirementAge.value);
   let shortfallSurplusDiv = document.querySelector('.short');
   let shortfallSurplus;
 
-  if (!withdrawalYears || !retirementYears) {
+  if (adjustedIncome === 0 || totalSavings === 0) {
     shortfallSurplus = '';
     shortfallSurplusDiv.style.backgroundColor = '#FFF';
     document.querySelector('.shortcap').style.color = '';
