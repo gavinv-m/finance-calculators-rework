@@ -191,8 +191,8 @@ export default function calculateRetirement() {
   // Real estate equity: owned portion of equity minus owned mortgage
   let fvRealEstate =
     (parseFloat(currentRealEstateEquity.value) || 0) *
-      Math.pow(1 + realEstateRate, yearsToRetirement) -
-    adjustedMortgage;
+    Math.pow(1 + realEstateRate, yearsToRetirement);
+
   if (isNaN(fvRealEstate)) fvRealEstate = 0;
   // ✅ Total Savings (Check for NaN and fallback to 0)
   let lifeInsuranceMonthly =
@@ -250,12 +250,12 @@ export default function calculateRetirement() {
       (principal * (monthlyRate * Math.pow(1 + monthlyRate, termMonths))) /
       (Math.pow(1 + monthlyRate, termMonths) - 1);
     const monthsPaid = Math.min(i * 12, termMonths);
-
     const remainingMortgage =
       principal * Math.pow(1 + monthlyRate, monthsPaid) -
       (monthlyPayment * (Math.pow(1 + monthlyRate, monthsPaid) - 1)) /
         monthlyRate;
 
+    console.log(remainingMortgage);
     const netRealEstate = isNaN(realEstateValue - remainingMortgage)
       ? 0
       : realEstateValue - remainingMortgage;
@@ -299,7 +299,6 @@ export default function calculateRetirement() {
   // ✅ Withdrawal Simulation
   let withdrawalYears = 0;
   let remainingBalance = totalSavings;
-  console.log(`Total Savings: ${totalSavings}`);
   let yearlyWithdrawal = adjustedIncome;
   // console.log(`Adjusted income: ${adjustedIncome}`);
 
