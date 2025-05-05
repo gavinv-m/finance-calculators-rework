@@ -264,7 +264,6 @@ export default function calculateRetirement() {
       (monthlyPayment * (Math.pow(1 + monthlyRate, monthsPaid) - 1)) /
         monthlyRate;
 
-    console.log(remainingMortgage);
     const netRealEstate = isNaN(realEstateValue - remainingMortgage)
       ? 0
       : realEstateValue - remainingMortgage;
@@ -312,21 +311,16 @@ export default function calculateRetirement() {
   let withdrawalYears = 0;
   let remainingBalance = totalSavings;
   let yearlyWithdrawal = adjustedIncome;
-  // console.log(`Adjusted income: ${adjustedIncome}`);
 
   while (remainingBalance > 0) {
-    console.log(`Remaining balance before withdrawal: ${remainingBalance}`);
     withdrawalYears++;
 
     // Prevent infinite loops
     if (withdrawalYears > 100) break;
 
     remainingBalance -= yearlyWithdrawal;
-    // console.log(`Remaining balance after withdrawal: ${remainingBalance}`);
     remainingBalance *= 1 + (parseFloat(annualReturn.value) || 0) / 100;
     yearlyWithdrawal *= 1 + (parseFloat(inflationRate.value) || 0) / 100;
-    // console.log(`Yearly withdrawal: ${yearlyWithdrawal}`);
-    // console.log(`Remaining balance after interest: ${remainingBalance}`);
   }
 
   expectedLifespan = expectedLifespan.value;
