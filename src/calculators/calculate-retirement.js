@@ -245,6 +245,7 @@ export default function calculateRetirement() {
   // ✅ Time-based projections for all assets
   let projections = [];
   stockGrowthRate = stockGrowthRate.value / 100;
+
   for (let i = 5; i <= yearsToRetirement; i += 5) {
     const realEstateValue =
       (parseFloat(currentRealEstateEquity.value) || 0) *
@@ -288,8 +289,11 @@ export default function calculateRetirement() {
       r !== 0
         ? lifeInsuranceMonthly * ((Math.pow(1 + r, i * n) - 1) / r) * (1 + r)
         : 0;
+    const projectedWholeLifeInsurance =
+      (parseFloat(wholeLifeInsurance.value) || 0) *
+      Math.pow(1 + (parseFloat(annualReturn.value) || 0) / 100, i);
     const totalInsuranceValue =
-      (parseFloat(wholeLifeInsurance.value) || 0) + insuranceContributionFV;
+      projectedWholeLifeInsurance + insuranceContributionFV;
 
     projections.push({
       year: i,
