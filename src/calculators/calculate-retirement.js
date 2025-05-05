@@ -26,6 +26,7 @@ export default function calculateRetirement() {
   let currentRealEstateEquity = document.getElementById(
     'currentRealEstateEquity'
   );
+  let stockGrowthRate = document.getElementById('stockGrowthRate');
 
   // ✅ Error messages
   let errors = {
@@ -51,6 +52,7 @@ export default function calculateRetirement() {
     ),
     mortgageTerm: document.getElementById('errorMortgageTerm'),
     mortgageInterestRate: document.getElementById('errorMortgageInterestRate'),
+    stockGrowthRate: document.getElementById('errorStockGrowthRate'),
   };
   // ✅ Clear previous errors
   Object.values(errors).forEach((error) => (error.innerText = ''));
@@ -150,6 +152,13 @@ export default function calculateRetirement() {
     0,
     100
   );
+  validateInput(
+    stockGrowthRate,
+    errors.stockGrowthRate,
+    'Stock Growth Rate (%)',
+    0,
+    100
+  );
 
   if (parseInt(currentAge.value) >= parseInt(retirementAge.value)) {
     errors.retirementAge.innerText =
@@ -235,8 +244,7 @@ export default function calculateRetirement() {
 
   // ✅ Time-based projections for all assets
   let projections = [];
-  let stockGrowthRate = 0.03; // Still fixed unless you want to make that editable too
-
+  stockGrowthRate = stockGrowthRate.value / 100;
   for (let i = 5; i <= yearsToRetirement; i += 5) {
     const realEstateValue =
       (parseFloat(currentRealEstateEquity.value) || 0) *
