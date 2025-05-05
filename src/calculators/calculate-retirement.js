@@ -368,9 +368,15 @@ export default function calculateRetirement() {
 
   // Only display years until depletion if desired income filled
   if (desiredIncome.value && inflationRate.value) {
-    document.getElementById('yearsUntilDepletion').innerHTML = `${
-      isNaN(withdrawalYears) ? 'N/A' : withdrawalYears
-    }`;
+    let displayYears = isNaN(withdrawalYears)
+      ? 'N/A'
+      : withdrawalYears > 100
+      ? '> 100'
+      : withdrawalYears;
+
+    document.getElementById(
+      'yearsUntilDepletion'
+    ).innerHTML = `${displayYears}`;
   } else {
     document.getElementById('yearsUntilDepletion').innerHTML = '';
   }
