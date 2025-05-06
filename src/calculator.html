@@ -1365,7 +1365,32 @@
                       </div>
                       <div class="mt-3">%</div>
                     </div>
-
+                    <div class="d-flex gap-2">
+                      <div class="form-floating mb-3">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="closingCostsRent"
+                          placeholder="Enter amount"
+                          value="2.5"
+                        />
+                        <label for="closingCostsRent">Closing Costs</label>
+                        <span class="error" id="errorClosingCostsRent"></span>
+                        <div class="absolute input-circle">
+                          <span
+                            type="button"
+                            class="btn-custom"
+                            id="calculateBtn"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-original-title="**Closing Costs** are the one-time fees paid during the finalization of a real estate transaction. These typically include attorney fees, title insurance, appraisal fees, and lender charges.
+                            "
+                            >i</span
+                          >
+                        </div>
+                      </div>
+                      <div class="mt-3">%</div>
+                    </div>
                     <div class="d-flex gap-2">
                       <div class="mt-3">$</div>
                       <div class="form-floating mb-3">
@@ -1421,12 +1446,12 @@
                         <input
                           type="number"
                           class="form-control"
-                          id="closingCostsRent"
+                          id="rentGrowth"
                           placeholder="Enter amount"
-                          value="2.5"
+                          value="3.5"
                         />
-                        <label for="closingCostsRent">Closing Costs</label>
-                        <span class="error" id="errorClosingCostsRent"></span>
+                        <label for="rentGrowth"> Annual Rent Growth </label>
+                        <span class="error" id="errorRentGrowth"></span>
                         <div class="absolute input-circle">
                           <span
                             type="button"
@@ -1434,8 +1459,34 @@
                             id="calculateBtn"
                             data-bs-toggle="tooltip"
                             data-bs-placement="top"
-                            data-bs-original-title="**Closing Costs** are the one-time fees paid during the finalization of a real estate transaction. These typically include attorney fees, title insurance, appraisal fees, and lender charges.
-                            "
+                            data-bs-original-title="Annual rent growth rate, or rental growth rate, is the percentage change in rental prices over a year, showing how much rents have increased or decreased in a specific area or for a particular type of property"
+                            >i</span
+                          >
+                        </div>
+                      </div>
+                      <div class="mt-3">%</div>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <div class="form-floating mb-3">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="managementFees"
+                          placeholder="Enter amount"
+                          value="8"
+                        />
+                        <label for="managementFees">
+                          Annual Property Management Fees
+                        </label>
+                        <span class="error" id="errorManagementFees"></span>
+                        <div class="absolute input-circle">
+                          <span
+                            type="button"
+                            class="btn-custom"
+                            id="calculateBtn"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-original-title="**Annual Property Management Fees (%)** is the percentage of rental income paid to a property management company for handling tenant relations, maintenance, and day-to-day operations."
                             >i</span
                           >
                         </div>
@@ -1572,58 +1623,6 @@
                           >
                         </div>
                       </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="managementFees"
-                          placeholder="Enter amount"
-                          value="8"
-                        />
-                        <label for="managementFees">
-                          Annual Property Management Fees
-                        </label>
-                        <span class="error" id="errorManagementFees"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Annual Property Management Fees (%)** is the percentage of rental income paid to a property management company for handling tenant relations, maintenance, and day-to-day operations."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="rentGrowth"
-                          placeholder="Enter amount"
-                          value="3.5"
-                        />
-                        <label for="rentGrowth"> Annual Rent Growth </label>
-                        <span class="error" id="errorRentGrowth"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Annual rent growth rate, or rental growth rate, is the percentage change in rental prices over a year, showing how much rents have increased or decreased in a specific area or for a particular type of property"
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
                     </div>
                     <div class="d-flex gap-2">
                       <div class="form-floating mb-3">
