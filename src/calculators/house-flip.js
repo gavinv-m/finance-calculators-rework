@@ -243,7 +243,8 @@ export default function calculateHouseFlip() {
   let netprocardhead = document.querySelector('.netprocardhead');
   netProfitEl.style.color = netProfit > 0 ? 'black' : 'black'; // gold if profit, red if loss
   netprocardhead.style.color = netProfit > 0 ? 'black' : '#d0b870'; // gold if profit, red if loss
-  netprocard.style.background = netProfit > 0 ? '#d0b870' : '#f86d6d';
+  netprocard.style.background =
+    netProfit === 0 ? '#ffffff' : netProfit > 0 ? '#d0b870' : '#f86d6d';
 
   let profitMarginEl = document.getElementById('profitMargin');
   let promarcard = document.querySelector('.promarcard');
@@ -251,9 +252,13 @@ export default function calculateHouseFlip() {
   profitMarginEl.style.color =
     profitMargin >= desiredProfitMargin ? 'black' : 'black';
   promarcardhead.style.color =
-    profitMargin >= desiredProfitMargin ? 'black' : '#d0b870'; // gold if profit, red if loss
+    profitMargin >= desiredProfitMargin ? '#d0b870' : 'black'; // gold if profit, red if loss
   promarcard.style.background =
-    profitMargin >= desiredProfitMargin ? '#d0b870' : '#f86d6d';
+    profitMargin === 0
+      ? '#ffffff'
+      : profitMargin >= desiredProfitMargin
+      ? '#d0b870'
+      : '#f86d6d';
 
   let rentalVsFlipEl = document.getElementById('rentalVsFlip');
   let rvfcard = document.querySelector('.rvfcard');
@@ -263,7 +268,11 @@ export default function calculateHouseFlip() {
   rvfcardhead.style.color =
     rentalVsFlip !== 'N/A' && rentalVsFlip > months ? 'black' : '#d0b870'; // gold if profit, red if loss
   rvfcard.style.background =
-    rentalVsFlip !== 'N/A' && rentalVsFlip > months ? '#d0b870' : '#f86d6d';
+    rentalVsFlip === 'N/A'
+      ? '#ffffff'
+      : rentalVsFlip !== 'N/A' && rentalVsFlip > months
+      ? '#d0b870'
+      : '#f86d6d';
 
   let dealCardd = document.querySelector('.dealCardd');
   let dealCarddhead = document.querySelector('.dealCarddhead');
