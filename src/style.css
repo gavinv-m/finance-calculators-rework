@@ -382,3 +382,8 @@ select#timeDuration {
   top: -25px;
   right: 0;
 }
+
+html {
+  visibility: visible;
+  opacity: 1;
+}
