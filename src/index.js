@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '#currentAge, #retirementAge, #expectedLifespan, #currentSavings,#lifeInsuranceMonthlyContributions,#wholeLifeInsurance, #monthlyContributions, #annualReturn,#desiredIncome,#inflationRate,#currentRealEstateEquity,#currentStockValue, #stockGrowthRate, #realEstateAppreciation,#mortgageBalance , #mortgageInterestRate , #mortgageTerm'
   );
   const input3 = document.querySelectorAll(
-    '#managementFees, #maintenanceCosts, #insuranceCosts,#renovations,#utilities,#rentGrowth,#closingCostsRent, #propertyTaxes, #vacancyRate,#monthlyRent,#interestRate,#loanTerm,#downPayment,#propertyPrice,#timeDuration , #appreciationRate '
+    '#managementFees, #maintenanceCosts, #insuranceCosts,#renovations,#utilities,#rentGrowth,#closingCostsRent, #propertyTaxes, #vacancyRate,#monthlyRent,#interestRate,#loanTerm,#downPayment,#propertyPrice,#timeDuration , #appreciationRate, #initialRenovations '
   );
 
   inputs.forEach((input) => {

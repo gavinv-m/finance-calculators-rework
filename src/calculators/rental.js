@@ -9,6 +9,8 @@ export default function calculateRentalProperty() {
   // Get values and convert to numbers
   let propertyPrice =
     parseFloat(document.getElementById('propertyPrice').value.trim()) || 0;
+  let initialRenovations =
+    parseFloat(document.getElementById('initialRenovations').value.trim()) || 0;
   let downPaymentPercent =
     parseFloat(document.getElementById('downPayment').value.trim()) || 0;
   let downPayment = (downPaymentPercent / 100) * propertyPrice;
@@ -30,6 +32,7 @@ export default function calculateRentalProperty() {
     parseFloat(document.getElementById('managementFees').value.trim()) || 0;
   let utilities =
     parseFloat(document.getElementById('utilities').value.trim()) || 0;
+
   let renovations =
     parseFloat(document.getElementById('renovations').value.trim()) || 0;
   let rentGrowth =
@@ -46,6 +49,7 @@ export default function calculateRentalProperty() {
   // Reference error span elements
   let errors = {
     propertyPrice: document.getElementById('errorPropertyPrice'),
+    initialRenovations: document.getElementById('errorInitialRenovations'),
     downPayment: document.getElementById('errorDownPaymentPer'),
     loanTerm: document.getElementById('errorLoanTerm'),
     interestRate: document.getElementById('errorInterestRate'),
@@ -135,6 +139,13 @@ export default function calculateRentalProperty() {
     0,
     100
   );
+  validateInput(
+    initialRenovations,
+    errors.initialRenovations,
+    'Initial Renovations',
+    0
+  );
+
   if (!isValid) return;
 
   // ✅ Loan Calculation
@@ -177,7 +188,7 @@ export default function calculateRentalProperty() {
   let capRate = (noi / propertyPrice) * 100;
 
   // ✅ Cash-on-Cash Return Calculation
-  let totalCashInvested = downPayment + closingCosts + renovations;
+  let totalCashInvested = downPayment + closingCosts + initialRenovations;
   let cocReturn =
     totalCashInvested > 0 ? (cashFlowAnnual / totalCashInvested) * 100 : 0;
 
