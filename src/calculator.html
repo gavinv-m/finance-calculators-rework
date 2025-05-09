@@ -1656,7 +1656,31 @@
               </div>
             </div>
 
-            <!-- Annual Growth -->
+            <!-- Budgeting -->
+            <div class="accordion-item" id="budget-open">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Budgeting
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div>
+                  <div class=""></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-8 mt-5">
@@ -1982,6 +2006,13 @@
                   </div>
                 </div>
               </div>
+              <!-- Budgeting Content -->
+              <div class="budget">
+                <h1>
+                  <span class="text-dark">Construction</span> Budget Estimator
+                </h1>
+                <p class="space">This is a paragraph</p>
+              </div>
             </div>
           </div>
         </div>
@@ -2107,7 +2138,7 @@
       document.addEventListener('DOMContentLoaded', function () {
         // Function to show only the selected class and its corresponding button
         function showAccordion(targetClass) {
-          const allClasses = ['house', 'retire', 'rental'];
+          const allClasses = ['house', 'retire', 'rental', 'budget'];
           const allButtons = ['pdfhouse', 'pdfretire', 'pdfrental'];
           const allprint = ['printhouse', 'printretire', 'printrent'];
 
@@ -2146,6 +2177,11 @@
           .addEventListener('click', function () {
             showAccordion('rental');
           });
+        document
+          .getElementById('budget-open')
+          .addEventListener('click', function () {
+            showAccordion('budget');
+          });
       });
 
       document.addEventListener('DOMContentLoaded', function () {
@@ -2157,6 +2193,9 @@
           document.querySelectorAll('.charts').forEach((div) => {
             div.style.display = 'none';
           });
+
+          // If accordion item doesn't have charts to display
+          if (!chartClass) return;
 
           // Show the selected chart
           const target = document.querySelector('.' + chartClass);
@@ -2190,6 +2229,12 @@
           .getElementById('retirement-open')
           .addEventListener('click', function () {
             showChart('retirecharts');
+          });
+
+        document
+          .getElementById('budget-open')
+          .addEventListener('click', function () {
+            showChart();
           });
       });
     </script>
