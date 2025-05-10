@@ -225,10 +225,13 @@ export default function calculateHouseFlip() {
   document.getElementById('displayedAddress').innerText = address
     ? `📍 ${address}`
     : '';
-  if (gapFundingRate > 0) {
+  if (Number(gapFundingRate) > 0) {
     document.getElementById('calculatedGapCost').innerText =
       formatNumber(gapFundingFees);
+  } else {
+    document.getElementById('calculatedGapCost').innerText = formatNumber(0);
   }
+
   // document.getElementById("requiredARV").innerText = formatNumber(requiredARV);
   document.getElementById('maxPurchasePrice').innerText =
     maxPurchasePrice > 0 ? formatNumber(maxPurchasePrice) : 0;
