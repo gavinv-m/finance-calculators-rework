@@ -222,6 +222,8 @@ export default function calculateHouseFlip() {
   )}`;
   // document.getElementById("proratedTaxes").innerText = formatNumber(proratedTaxes);
   // document.getElementById("proratedInsurance").innerText = formatNumber(proratedInsurance);
+  document.getElementById('calculatedGapAmount').innerText =
+    formatNumber(gapCosts);
   document.getElementById('displayedAddress').innerText = address
     ? `📍 ${address}`
     : '';
