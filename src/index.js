@@ -6,26 +6,39 @@ import calculateRentalProperty from './calculators/rental';
 import updateTableRange from './utils/update-table-range';
 import populateYearsDropdown from './utils/populate-years-dropdown';
 import initializePdfListeners from '../downloaders/pdf-event-listeners';
+import calculateConstructionCost from './calculators/total-construction';
 
 document.addEventListener('DOMContentLoaded', function () {
+  // House flip
   const inputs = document.querySelectorAll(
     '#purchasePrice,#propertyAddress, #renoCosts, #holdingCosts, #desiredProfitMargin, #closingCosts, #afterRepairValue,#projectMonths,#resaleCosts,#downPaymentPercent,#gapCosts,#loanPoints,#houseLoanYear,#houseinterestRate,#houseMonthlyRent,#insurance,#propertyTaxesHF,#downPaymentType,#houseAnnualMaintenance,#houseAnnualUtilities'
   );
-  const input2 = document.querySelectorAll(
-    '#currentAge, #retirementAge, #expectedLifespan, #currentSavings,#lifeInsuranceMonthlyContributions,#wholeLifeInsurance, #monthlyContributions, #annualReturn,#desiredIncome,#inflationRate,#currentRealEstateEquity,#currentStockValue, #stockGrowthRate, #realEstateAppreciation,#mortgageBalance , #mortgageInterestRate , #mortgageTerm'
-  );
-  const input3 = document.querySelectorAll(
-    '#managementFees, #maintenanceCosts, #insuranceCosts,#renovations,#utilities,#rentGrowth,#closingCostsRent, #propertyTaxes, #vacancyRate,#monthlyRent,#interestRate,#loanTerm,#downPayment,#propertyPrice,#timeDuration , #appreciationRate, #initialRenovations '
-  );
-
   inputs.forEach((input) => {
     input.addEventListener('input', calculateHouseFlip);
   });
+
+  // Retirement
+  const input2 = document.querySelectorAll(
+    '#currentAge, #retirementAge, #expectedLifespan, #currentSavings,#lifeInsuranceMonthlyContributions,#wholeLifeInsurance, #monthlyContributions, #annualReturn,#desiredIncome,#inflationRate,#currentRealEstateEquity,#currentStockValue, #stockGrowthRate, #realEstateAppreciation,#mortgageBalance , #mortgageInterestRate , #mortgageTerm'
+  );
   input2.forEach((input) => {
     input.addEventListener('input', calculateRetirement);
   });
+
+  // Rental
+  const input3 = document.querySelectorAll(
+    '#managementFees, #maintenanceCosts, #insuranceCosts,#renovations,#utilities,#rentGrowth,#closingCostsRent, #propertyTaxes, #vacancyRate,#monthlyRent,#interestRate,#loanTerm,#downPayment,#propertyPrice,#timeDuration , #appreciationRate, #initialRenovations '
+  );
   input3.forEach((input) => {
     input.addEventListener('input', calculateRentalProperty);
+  });
+
+  // Budgeting
+  const input4 = document.querySelectorAll(
+    '#plansPermitsAmount, #demolitionAmount, #foundationAmount, #roofGuttersAmount, #exteriorSlidingAmount, #windowsAmount, #garageDrivewayAmount, #framingAmount, #finishCarpentryAmount, #sheetrockInsulationAmount, #interiorPaintAmount, #flooringAmount, #kitchenAmount, #bathroomAmount, #plumbingWorkAmount, #electricalWorkAmount, #hvacWorkAmount, #appliancesAmount, #yardLandscapingAmount, #basementFinishesAmount, #miscAmount'
+  );
+  input4.forEach((input) => {
+    input.addEventListener('input', calculateConstructionCost);
   });
 
   initializePdfListeners();
@@ -40,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   calculateHouseFlip();
   calculateRetirement();
   calculateRentalProperty();
+  calculateConstructionCost();
 
   // Populate rental years dropdown
   populateYearsDropdown();
