@@ -22,6 +22,7 @@
 .budget-amount {
   align-items: center;
   display: flex;
+  gap: 5px;
 }
 
 .line-item {
@@ -47,4 +48,21 @@
 #budget-table tr:hover {
   background-color: #f1e7c7;
   cursor: pointer;
+}
+
+.budget-amount input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #d0b870;
+  border-radius: 4px;
+}
+
+.amount-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.amount-wrapper label {
+  align-self: flex-start;
+  font-size: 14px;
 }
