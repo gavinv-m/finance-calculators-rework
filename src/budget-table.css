@@ -66,3 +66,19 @@
   align-self: flex-start;
   font-size: 14px;
 }
+
+.description,
+.notes {
+  text-align: left;
+  vertical-align: top;
+}
+
+.description > section > label {
+  font-size: 14px;
+}
+
+.description textarea {
+  border: 1px solid #d0b870;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
