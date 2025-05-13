@@ -2029,7 +2029,7 @@
                 <div
                   class="row text-center mt-4 card-2 gap-3 justify-content-center"
                 >
-                  <table>
+                  <table id="budget-table">
                     <thead>
                       <tr>
                         <th>Line Item</th>
@@ -2040,10 +2040,12 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>01 Plans & Permits</td>
+                        <td class="line-item">
+                          <span class="line-number">01</span> Plans & Permits
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="500" />
                           </div>
@@ -2103,10 +2105,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>02 Demolition</td>
+                        <td class="line-item">
+                          <span class="line-number">02</span> Demolition
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="500" />
                           </div>
@@ -2130,10 +2134,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>03 Foundation</td>
+                        <td class="line-item">
+                          <span class="line-number">03</span> Foundation
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="500" />
                           </div>
@@ -2155,10 +2161,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>04 Roof & Gutters</td>
+                        <td class="line-item">
+                          <span class="line-number">04</span> Roof & Gutters
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="8500" />
                           </div>
@@ -2230,10 +2238,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>05 Exterior / Sliding</td>
+                        <td class="line-item">
+                          <span class="line-number">05</span> Exterior / Sliding
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="12000" />
                           </div>
@@ -2286,10 +2296,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>06 Windows</td>
+                        <td class="line-item">
+                          <span class="line-number">06</span> Windows
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="12000" />
                           </div>
@@ -2357,10 +2369,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>07 Garage & Driveway</td>
+                        <td class="line-item">
+                          <span class="line-number">07</span> Garage & Driveway
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="25000" />
                           </div>
@@ -2399,10 +2413,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>08 Framing</td>
+                        <td class="line-item">
+                          <span class="line-number">08</span> Framing
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="5000" />
                           </div>
@@ -2433,10 +2449,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>09 Finish & Carpentry</td>
+                        <td class="line-item">
+                          <span class="line-number">09</span> Finish & Carpentry
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="5500" />
                           </div>
@@ -2520,10 +2538,13 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>10 Sheetrock & Insulation</td>
+                        <td class="line-item">
+                          <span class="line-number">10</span> Sheetrock &
+                          Insulation
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="7000" />
                           </div>
@@ -2589,10 +2610,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>11 Interior Paint</td>
+                        <td class="line-item">
+                          <span class="line-number">11</span> Interior Paint
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="7000" />
                           </div>
@@ -2630,10 +2653,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>12 Flooring</td>
+                        <td class="line-item">
+                          <span class="line-number">12</span> Flooring
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="8500" />
                           </div>
@@ -2660,10 +2685,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>13 Kitchen</td>
+                        <td class="line-item">
+                          <span class="line-number">13</span> Kitchen
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="10000" />
                           </div>
@@ -2691,10 +2718,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>14 Bathrooms</td>
+                        <td class="line-item">
+                          <span class="line-number">14</span> Bathrooms
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="7500" />
                           </div>
@@ -2720,10 +2749,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>15 Plumbing work</td>
+                        <td class="line-item">
+                          <span class="line-number">15</span> Plumbing work
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="10000" />
                           </div>
@@ -2781,10 +2812,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>16 Electrical work</td>
+                        <td class="line-item">
+                          <span class="line-number">16</span> Electrical work
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="12000" />
                           </div>
@@ -2833,10 +2866,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>17 HVAC Work</td>
+                        <td class="line-item">
+                          <span class="line-number">17</span> HVAC Work
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="0" />
                           </div>
@@ -2915,10 +2950,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>18 Appliances</td>
+                        <td class="line-item">
+                          <span class="line-number">18</span> Appliances
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="3500" />
                           </div>
@@ -2942,10 +2979,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>19 Yard / Landscaping</td>
+                        <td class="line-item">
+                          <span class="line-number">19</span> Yard / Landscaping
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="25" />
                           </div>
@@ -2971,10 +3010,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>20 Basement Finishes</td>
+                        <td class="line-item">
+                          <span class="line-number">20</span> Basement Finishes
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="0" />
                           </div>
@@ -3000,10 +3041,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>21 Miscellaneous</td>
+                        <td class="line-item">
+                          <span class="line-number">21</span> Miscellaneous
+                        </td>
                         <td>
                           <label>Amount</label>
-                          <div>
+                          <div class="budget-amount">
                             <span>$</span>
                             <input type="number" value="0" />
                           </div>
@@ -3182,7 +3225,7 @@
         }
 
         // Set initial state
-        showAccordion('house');
+        showAccordion('budget');
 
         // Adding event listeners to toggle respective elements
         document

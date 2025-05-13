@@ -12,6 +12,9 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'docs'),
   },
+  performance: {
+    hints: false,
+  },
   module: {
     rules: [
       {

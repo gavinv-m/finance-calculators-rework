@@ -1,4 +1,5 @@
 import './style.css';
+import './budget-table.css';
 import calculateHouseFlip from './calculators/house-flip';
 import calculateRetirement from './calculators/calculate-retirement';
 import calculateRentalProperty from './calculators/rental';
