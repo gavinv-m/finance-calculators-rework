@@ -73,6 +73,10 @@
   vertical-align: top;
 }
 
+.description label {
+  display: block;
+}
+
 .description > section > label {
   font-size: 14px;
 }
@@ -81,4 +85,38 @@
   border: 1px solid #d0b870;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   resize: none;
+}
+
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type='radio'] + span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type='radio']:checked + span {
+  border-color: #d0b870;
+}
+
+input[type='radio']:checked + span:after {
+  content: '';
+  position: absolute;
+  top: 1.1px;
+  left: 1.4px;
+  width: 10px;
+  height: 10px;
+  background-color: #d0b870;
+  border-radius: 50%;
 }
