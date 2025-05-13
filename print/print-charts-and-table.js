@@ -1,4 +1,8 @@
-function printChartsAndTable(chartClass, tableClass, summaryDivId) {
+export default function printChartsAndTable(
+  chartClass,
+  tableClass,
+  summaryDivId
+) {
   const chartContainer = document.querySelector(chartClass);
   const tableContainer = document.querySelector(tableClass);
   const summaryDiv = document.querySelector(summaryDivId);

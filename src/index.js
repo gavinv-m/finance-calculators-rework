@@ -5,6 +5,7 @@ import calculateRentalProperty from './calculators/rental';
 import updateTableRange from './utils/update-table-range';
 import populateYearsDropdown from './utils/populate-years-dropdown';
 import initializePdfListeners from '../downloaders/pdf-event-listeners';
+import initializePrintListeners from '../print/print-event-listeners';
 
 document.addEventListener('DOMContentLoaded', function () {
   const inputs = document.querySelectorAll(
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   initializePdfListeners();
+  initializePrintListeners();
 
   // Attach event listener to dropdown for updating table range
   const yearsDropdown = document.getElementById('years_tbl');

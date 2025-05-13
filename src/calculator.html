@@ -1671,8 +1671,8 @@
                   <i class="fa fa-download"></i>
                 </button>
                 <button
-                  onclick="printSpecificSection(['.housecharts','.house'])"
                   class="printhouse print-button btns"
+                  id="printHouseFlipBtn"
                 >
                   🖨️
                 </button>
@@ -1832,8 +1832,8 @@
                   <i class="fa fa-download"></i>
                 </button>
                 <button
-                  onclick="printSpecificSection(['.retirecharts','.retire'])"
                   class="printretire print-button btns"
+                  id="printRetirementBtn"
                 >
                   🖨️
                 </button>
@@ -1898,10 +1898,7 @@
                 <button id="download-pdf3" class="pdfrental download btns">
                   <i class="fa fa-download"></i>
                 </button>
-                <button
-                  onclick="printChartsAndTable('.rentalcharts','.table-responsive','.rental')"
-                  class="printrent print-button btns"
-                >
+                <button class="printrent print-button btns" id="printRentalBtn">
                   🖨️
                 </button>
               </div>

@@ -1,4 +1,4 @@
-function printSpecificSection(classNames) {
+export default function printSpecificSection(classNames) {
   if (!Array.isArray(classNames) || classNames.length === 0) return;
 
   const chartContainer = document.querySelector(classNames[0]);
