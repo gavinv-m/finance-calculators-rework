@@ -1,0 +1,142 @@
+#budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#budget-table th {
+  background-color: #d0b870;
+  color: #333;
+  padding: 12px;
+  font-weight: bold;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+#budget-table td {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.budget-amount {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.line-item {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-left: 4px solid #d0b870 !important;
+}
+
+.line-number {
+  background-color: #d0b870;
+  color: #333;
+  font-weight: bold;
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+#budget-table tr:nth-child(even) {
+  background-color: #f9f5e9;
+}
+
+#budget-table tr:hover {
+  background-color: #f1e7c7;
+  cursor: pointer;
+}
+
+.budget-amount input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #d0b870;
+  border-radius: 4px;
+}
+
+.amount-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.amount-wrapper label {
+  align-self: flex-start;
+  font-size: 14px;
+}
+
+.description,
+.notes {
+  text-align: left;
+  vertical-align: top;
+}
+
+.description label {
+  display: block;
+}
+
+.description > section > label {
+  font-size: 14px;
+}
+
+.description textarea {
+  border: 1px solid #d0b870;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
+
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.description label:has(input[type='radio']) {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+input[type='radio'] + span {
+  display: inline-block;
+  min-width: 16px;
+  min-height: 16px;
+  margin-right: 8px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+input[type='radio']:checked + span {
+  border-color: #d0b870;
+}
+
+input[type='radio']:checked + span:after {
+  content: '';
+  position: absolute;
+  top: 1.1px;
+  left: 1.4px;
+  width: 10px;
+  height: 10px;
+  background-color: #d0b870;
+  border-radius: 50%;
+}
+
+#budget-total > td:first-child {
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+}
+
+#budget-total-amt {
+  font-size: 20px;
+  font-weight: bold;
+}

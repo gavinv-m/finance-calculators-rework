@@ -8,12 +8,6 @@ export default function initializePrintListeners() {
     printSpecificSection(['.housecharts', '.house']);
   });
 
-  // Retirement:
-  const retirementBtn = document.getElementById('printRetirementBtn');
-  retirementBtn.addEventListener('click', () => {
-    printSpecificSection(['.retirecharts', '.retire']);
-  });
-
   // Rental:
   const rentalBtn = document.getElementById('printRentalBtn');
   rentalBtn.addEventListener('click', () => {

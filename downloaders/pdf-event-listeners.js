@@ -4,6 +4,5 @@ import setupRentalPdfDownload from './rental-pdf';
 
 export default function initializePdfListeners() {
   setupHouseFlipPdfDownload();
-  setupRetirementPdfDownload();
   setupRentalPdfDownload();
 }
