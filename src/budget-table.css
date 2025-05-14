@@ -94,16 +94,25 @@ input[type='radio'] {
   height: 0;
 }
 
+.description label:has(input[type='radio']) {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
 input[type='radio'] + span {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
   margin-right: 8px;
   border: 2px solid #ccc;
   border-radius: 50%;
   vertical-align: middle;
   cursor: pointer;
   position: relative;
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
 input[type='radio']:checked + span {
