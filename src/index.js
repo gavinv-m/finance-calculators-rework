@@ -1,7 +1,6 @@
 import './style.css';
 import './budget-table.css';
 import calculateHouseFlip from './calculators/house-flip';
-import calculateRetirement from './calculators/calculate-retirement';
 import calculateRentalProperty from './calculators/rental';
 import updateTableRange from './utils/update-table-range';
 import populateYearsDropdown from './utils/populate-years-dropdown';
@@ -15,14 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
   );
   inputs.forEach((input) => {
     input.addEventListener('input', calculateHouseFlip);
-  });
-
-  // Retirement
-  const input2 = document.querySelectorAll(
-    '#currentAge, #retirementAge, #expectedLifespan, #currentSavings,#lifeInsuranceMonthlyContributions,#wholeLifeInsurance, #monthlyContributions, #annualReturn,#desiredIncome,#inflationRate,#currentRealEstateEquity,#currentStockValue, #stockGrowthRate, #realEstateAppreciation,#mortgageBalance , #mortgageInterestRate , #mortgageTerm'
-  );
-  input2.forEach((input) => {
-    input.addEventListener('input', calculateRetirement);
   });
 
   // Rental
@@ -51,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Run calculators
   calculateHouseFlip();
-  calculateRetirement();
   calculateRentalProperty();
   calculateConstructionCost();
 

@@ -724,494 +724,28 @@
               </div>
             </div>
 
-            <!-- Operating Expenses -->
-            <div class="accordion-item" id="retirement-open">
-              <h2 class="accordion-header" id="headingTwo">
+            <!-- Budgeting -->
+            <div class="accordion-item" id="budget-open">
+              <h2 class="accordion-header" id="headingFour">
                 <button
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
+                  data-bs-target="#collapseFour"
                   aria-expanded="false"
-                  aria-controls="collapseTwo"
+                  aria-controls="collapseFour"
                 >
-                  Retirement planning
+                  Budgeting
                 </button>
               </h2>
               <div
-                id="collapseTwo"
+                id="collapseFour"
                 class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
+                aria-labelledby="headingFour"
                 data-bs-parent="#faqAccordion"
               >
-                <div class="accordion-body">
-                  <div class="">
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">#</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="currentAge"
-                          placeholder="Enter amount"
-                          value="28"
-                        />
-                        <label for="currentAge">Current Age</label>
-                        <span class="error" id="errorCurrentAge"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Enter Your Current Age"
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">#</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="retirementAge"
-                          placeholder="Enter amount"
-                          value="65"
-                        />
-                        <label for="retirementAge">Retirement Age</label>
-                        <span class="error" id="errorRetirementAge"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Enter Your Retirement Age"
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">#</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="expectedLifespan"
-                          placeholder="Enter amount"
-                          value="90"
-                          min="28"
-                          max="130"
-                        />
-                        <label for="expectedLifespan">Expected Lifespan</label>
-                        <span class="error" id="errorExpectedLifespan"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Enter Your Expected Lifespan"
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="annualReturn"
-                          placeholder="Enter amount"
-                          value="7"
-                        />
-                        <label for="annualReturn"
-                          >Expected Annual Return
-                        </label>
-                        <span class="error" id="errorAnnualReturn"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Expected Annual Return (%)** is the projected percentage gain on the investment over a year, calculated based on profits relative to the total investment."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="currentSavings"
-                          placeholder="Enter amount"
-                          value="75000"
-                        />
-                        <label for="currentSavings">Current Savings</label>
-                        <span class="error" id="errorCurrentSavings"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Current Savings** is the amount of personal funds available to invest in the property purchase, renovations, and associated costs."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="monthlyContributions"
-                          placeholder="Enter amount"
-                          value="600"
-                        />
-                        <label for="monthlyContributions"
-                          >Monthly Contributions</label
-                        >
-                        <span
-                          class="error"
-                          id="errorMonthlyContributions"
-                        ></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Monthly Contributions** to your retirement savings or investment account, such as a pension or retirement annuity fund."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="wholeLifeInsurance"
-                          placeholder="Enter amount"
-                          value="25000"
-                        />
-                        <label for="wholeLifeInsurance"
-                          >Whole Life Insurance Value</label
-                        >
-                        <span class="error" id="errorwholeLifeInsurance"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Whole life insurance is a type of permanent life insurance that provides coverage for your entire life, as long as premiums are paid, and builds a cash value component that can be borrowed against or withdrawn."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="lifeInsuranceMonthlyContributions"
-                          placeholder="Enter amount"
-                          value="150"
-                        />
-                        <label for="lifeInsuranceMonthlyContributions"
-                          >Monthly Contributions to Life Insurance</label
-                        >
-                        <span
-                          class="error"
-                          id="errorLifeInsuranceMonthlyContributions"
-                        ></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Whole life insurance is a type of permanent life insurance that provides coverage for your entire life, as long as premiums are paid, and builds a cash value component that can be borrowed against or withdrawn."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="currentStockValue"
-                          placeholder="Enter amount"
-                          value="40000"
-                        />
-                        <label for="currentStockValue"
-                          >Current Stock Value</label
-                        >
-                        <span class="error" id="errorCurrentStockValue"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Current Stock Value** is the estimated market value of the property based on recent sales of similar homes in the area."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="stockGrowthRate"
-                          placeholder="Enter amount"
-                          value="2"
-                        />
-                        <label for="stockGrowthRate">
-                          Annual Stock Growth Rate (%)
-                        </label>
-                        <span class="error" id="errorStockGrowthRate"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtnStock"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Expected Annual Return (%)** is the projected yearly percentage gain on the stock investment, based on market performance and reinvested dividends."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="currentRealEstateEquity"
-                          placeholder="Enter amount"
-                          value="120000"
-                        />
-                        <label for="currentRealEstateEquity"
-                          >Current Real Estate Equity</label
-                        >
-                        <span
-                          class="error"
-                          id="errorCurrentRealEstateEquity"
-                        ></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Current Real Estate Equity** is the property's market value minus any outstanding mortgage or loan balances."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="realEstateAppreciation"
-                          placeholder="Enter amount"
-                          value="4"
-                        />
-                        <label for="realEstateAppreciation"
-                          >Annual Real Estate Appreciation (%)
-                        </label>
-                        <span
-                          class="error"
-                          id="errorRealEstateAppreciation"
-                        ></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Expected Annual Return (%)** is the projected percentage gain on the investment over a year, calculated based on profits relative to the total investment."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="inflationRate"
-                          placeholder="Enter amount"
-                          value="2"
-                        />
-                        <label for="inflationRate">Inflation Rate</label>
-                        <span class="error" id="errorInflationRate"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Inflation Rate (%)** is the annual percentage increase in the general price level of goods and services, which can impact the future value of investment returns and costs."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="desiredIncome"
-                          placeholder="Enter amount"
-                          value="50000"
-                        />
-                        <label for="desiredIncome"
-                          >Desired Retirement Income</label
-                        >
-                        <span class="error" id="errorDesiredIncome"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Desired Retirement Income** is the annual income you want during retirement, in today’s dollars. For example, if you want $50,000 per year, in today's money, and expect 3% inflation over 20 years, we'll adjust this to about $90,000 to maintain the same purchasing power."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">$</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="mortgageBalance"
-                          placeholder="Enter amount"
-                          value="30000"
-                        />
-                        <label for="mortgageBalance"
-                          >Current Mortgage Balance</label
-                        >
-                        <span class="error" id="errormortgageBalance"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="**Current Mortgage Balance** means a Mortgage Loan for which the last scheduled payment of debt service is not more than 30 days past due (without regard to any grace period) on and as of the Determination Date."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="mt-3">#</div>
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="mortgageTerm"
-                          placeholder="Enter amount"
-                          value="20"
-                        />
-                        <label for="mortgageTerm">Mortgage Term (Years)</label>
-                        <span class="error" id="errorMortgageTerm"></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="Mortgage Term refers to the total length of time it takes to repay the loan, including both the principal and interest."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="mortgageInterestRate"
-                          placeholder="Enter amount"
-                          value="3.5"
-                        />
-                        <label for="mortgageInterestRate"
-                          >Mortgage Interest Rate (%)</label
-                        >
-                        <span
-                          class="error"
-                          id="errorMortgageInterestRate"
-                        ></span>
-                        <div class="absolute input-circle">
-                          <span
-                            type="button"
-                            class="btn-custom"
-                            id="calculateBtn"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            data-bs-original-title="A mortgage interest rate is the percentage charged on a home loan, representing the cost of borrowing money to purchase or maintain a property."
-                            >i</span
-                          >
-                        </div>
-                      </div>
-                      <div class="mt-3">%</div>
-                    </div>
-                  </div>
+                <div>
+                  <div class=""></div>
                 </div>
               </div>
             </div>
@@ -1655,32 +1189,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Budgeting -->
-            <div class="accordion-item" id="budget-open">
-              <h2 class="accordion-header" id="headingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
-                  Budgeting
-                </button>
-              </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#faqAccordion"
-              >
-                <div>
-                  <div class=""></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-md-8 mt-5">
@@ -1844,73 +1352,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Retirement Form Output -->
-              <div class="btn-flex">
-                <button id="download-pdf2" class="pdfretire download btns">
-                  <i class="fa fa-download"></i>
-                </button>
-                <button
-                  onclick="printSpecificSection(['.retirecharts','.retire'])"
-                  class="printretire print-button btns"
-                >
-                  🖨️
-                </button>
-              </div>
-              <div class="row text-center mt-4 card-2 retire" id="contentPDF2">
-                <h1>
-                  <span class="text-dark">Retirement </span> Planning Calculator
-                </h1>
-                <p class="space">
-                  Introducing the <b>Retirement Planning Calculator</b> – a
-                  powerful tool designed to help you plan and secure your
-                  financial future. This calculator allows you to estimate your
-                  <b
-                    >savings growth, expected retirement income, investment
-                    returns, and future expenses</b
-                  >
-                  based on key financial inputs. Whether you're just starting or
-                  fine-tuning your retirement strategy, this tool provides
-                  <b>data-driven insights</b> to help you achieve your desired
-                  retirement lifestyle. Start planning today and take control of
-                  your financial independence!
-                </p>
-                <div
-                  class="row text-center mt-4 card-2 gap-3 justify-content-center"
-                >
-                  <div class="col-md-5">
-                    <div class="card p-3 card-2-inner totalSavingsCard">
-                      <h4 class="totalSavingshead">
-                        Total Savings at Retirement:
-                      </h4>
-                      <div class="result" id="totalSavings"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="card p-3 card-2-inner">
-                      <h4>Annual Withdrawal Needed:</h4>
-                      <div class="result" id="annualWithdrawal"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="card p-3 card-2-inner">
-                      <h4>Years Until Depletion:</h4>
-                      <div class="result" id="yearsUntilDepletion"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="card p-3 card-2-inner short">
-                      <h4 class="shortcap">Shortfall/Surplus:</h4>
-                      <div class="result" id="shortfallSurplus"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div class="card p-3 card-2-inner short">
-                      <h4>Net Portfolio Value:</h4>
-                      <div class="result" id="projections"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <!-- Rental Property Evaluation Calculator -->
               <div class="btn-flex">
                 <button id="download-pdf3" class="pdfrental download btns">
@@ -3407,9 +2849,9 @@
       document.addEventListener('DOMContentLoaded', function () {
         // Function to show only the selected class and its corresponding button
         function showAccordion(targetClass) {
-          const allClasses = ['house', 'retire', 'rental', 'budget'];
-          const allButtons = ['pdfhouse', 'pdfretire', 'pdfrental'];
-          const allprint = ['printhouse', 'printretire', 'printrent'];
+          const allClasses = ['house', 'rental', 'budget'];
+          const allButtons = ['pdfhouse', 'pdfrental'];
+          const allprint = ['printhouse', 'printrent'];
 
           allClasses.forEach((cls) => {
             document.querySelector('.' + cls).style.display =
@@ -3428,18 +2870,13 @@
         }
 
         // Set initial state
-        showAccordion('budget');
+        showAccordion('house');
 
         // Adding event listeners to toggle respective elements
         document
           .getElementById('house-open')
           .addEventListener('click', function () {
             showAccordion('house');
-          });
-        document
-          .getElementById('retirement-open')
-          .addEventListener('click', function () {
-            showAccordion('retire');
           });
         document
           .getElementById('rental-open')
@@ -3492,12 +2929,6 @@
           .getElementById('rental-open')
           .addEventListener('click', function () {
             showChart('rentalcharts');
-          });
-
-        document
-          .getElementById('retirement-open')
-          .addEventListener('click', function () {
-            showChart('retirecharts');
           });
 
         document
