@@ -135,3 +135,8 @@ input[type='radio']:checked + span:after {
   text-align: left;
   vertical-align: top;
 }
+
+#budget-total-amt {
+  font-size: 20px;
+  font-weight: bold;
+}
