@@ -3,7 +3,6 @@ import formatNumberPercent from '../utils/format-number-percent';
 import resetCanvas from '../chart-utils/reset-canvas';
 import createProjectCostBreakdownChart from '../charts/project-cost-breakdown-chart';
 import createARVDistributionChart from '../charts/arv-distribution-chart';
-import interestProjectDuration from '../utils/interest-project-duration';
 
 export default function calculateHouseFlip() {
   let purchase =
@@ -50,37 +49,21 @@ export default function calculateHouseFlip() {
   let downPayment = (downPaymentBase * downPaymentPercent) / 100;
   let monthlyRate = interestRate / 100 / 12;
   let loanAmount =
-    downPaymentType === 'purchaseAndReno'
-      ? purchase + reno - downPayment
-      : purchase - downPayment;
+    downPaymentType === 'purchaseAndReno' ? purchase + reno : purchase;
   let proratedMaintenance = (annualMaintenance / 12) * months;
   let proratedUtilities = (annualUtilities / 12) * months;
-
-  // let loanInterest = (loanAmount * (interestRate / 100)) * (months / 12);
-  let loanFees = (loanAmount * loanPoints) / 100;
   let proratedTaxes = (annualPropertyTaxes / 12) * months;
   let proratedInsurance = (annualInsurance / 12) * months;
-  let monthlyMortgagePayment =
-    termYears > 0
-      ? (loanAmount * monthlyRate) /
-        (1 - Math.pow(1 + monthlyRate, -totalPayments))
-      : 0;
-  let totalMortgagePaid = monthlyMortgagePayment * months;
 
-  let interestPaid = interestProjectDuration(
-    loanAmount,
-    monthlyMortgagePayment,
-    months,
-    monthlyRate
-  );
-  let loanInterest = interestPaid;
+  let loanFees = (loanAmount * loanPoints) / 100;
+  let loanInterest = loanAmount * monthlyRate * months;
   let totalProjectCost =
     purchase +
     reno +
     holding +
     closing +
     resaleCosts +
-    totalMortgagePaid +
+    loanInterest +
     loanFees +
     proratedTaxes +
     proratedInsurance +
@@ -95,7 +78,7 @@ export default function calculateHouseFlip() {
     reno +
     holding +
     closing +
-    totalMortgagePaid +
+    loanInterest +
     loanFees +
     gapFundingFees +
     proratedTaxes +
@@ -108,7 +91,7 @@ export default function calculateHouseFlip() {
     (downPaymentType !== 'purchaseAndReno' ? reno : 0) +
     holding +
     closing +
-    totalMortgagePaid +
+    loanInterest +
     gapFundingFees +
     proratedTaxes +
     proratedInsurance +
@@ -184,7 +167,6 @@ export default function calculateHouseFlip() {
     holding +
     closing +
     resaleCosts +
-    totalMortgagePaid +
     loanFees +
     gapFundingFees +
     proratedTaxes +
