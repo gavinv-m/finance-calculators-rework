@@ -70,7 +70,7 @@ export default function calculateHouseFlip() {
     proratedMaintenance +
     proratedUtilities;
   // **Corrected Investment Calculation**
-  let gapCosts = totalProjectCost - (loanAmount + downPayment);
+  let gapCosts = totalProjectCost - loanAmount;
   let gapFundingFees = gapCosts > 0 ? (gapCosts * gapFundingRate) / 100 : 0;
 
   let totalInvestment =
