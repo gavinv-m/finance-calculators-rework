@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'finance-calculator'),
+    path: path.resolve(__dirname, 'docs'),
     assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
