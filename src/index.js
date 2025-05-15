@@ -11,7 +11,7 @@ import calculateConstructionCost from './calculators/total-construction';
 document.addEventListener('DOMContentLoaded', function () {
   // House flip
   const inputs = document.querySelectorAll(
-    '#purchasePrice,#propertyAddress, #renoCosts, #holdingCosts, #desiredProfitMargin, #closingCosts, #afterRepairValue,#projectMonths,#resaleCosts,#downPaymentPercent,#gapCosts,#loanPoints,#houseLoanYear,#houseinterestRate,#houseMonthlyRent,#insurance,#propertyTaxesHF,#downPaymentType,#houseAnnualMaintenance,#houseAnnualUtilities'
+    '#purchasePrice,#propertyAddress, #renoCosts, #holdingCosts, #desiredProfitMargin, #closingCosts, #afterRepairValue,#projectMonths,#resaleCosts,#downPaymentPercent,#gapCosts,#loanPoints,#houseLoanYear,#houseinterestRate,#houseMonthlyRent,#insurance,#propertyTaxesHF,#downPaymentType,#houseAnnualMaintenance,#houseAnnualUtilities, #gapFundingAmount'
   );
   inputs.forEach((input) => {
     input.addEventListener('input', calculateHouseFlip);

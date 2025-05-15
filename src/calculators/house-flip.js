@@ -18,7 +18,8 @@ export default function calculateHouseFlip() {
   let loanPoints = parseFloat(document.getElementById('loanPoints').value) || 0;
   let termYears =
     parseFloat(document.getElementById('houseLoanYear').value) || 0;
-  let totalPayments = termYears * 12;
+  let gapFundingAmt =
+    parseFloat(document.getElementById('gapFundingAmount').value) || 0;
   let gapFundingRate =
     parseFloat(document.getElementById('gapCosts').value) || 0;
   // Additional Fields
@@ -70,8 +71,7 @@ export default function calculateHouseFlip() {
     proratedMaintenance +
     proratedUtilities;
   // **Corrected Investment Calculation**
-  let gapCosts = totalProjectCost - loanAmount;
-  let gapFundingFees = gapCosts > 0 ? (gapCosts * gapFundingRate) / 100 : 0;
+  let gapFundingFees = gapFundingAmt * (gapFundingRate / 100 / 12) * months;
 
   let totalInvestment =
     purchase +
@@ -204,8 +204,6 @@ export default function calculateHouseFlip() {
   )}`;
   // document.getElementById("proratedTaxes").innerText = formatNumber(proratedTaxes);
   // document.getElementById("proratedInsurance").innerText = formatNumber(proratedInsurance);
-  document.getElementById('calculatedGapAmount').innerText =
-    formatNumber(gapCosts);
   document.getElementById('displayedAddress').innerText = address
     ? `📍 ${address}`
     : '';
