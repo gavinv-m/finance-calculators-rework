@@ -1454,1285 +1454,1301 @@
               <!-- Budgeting Content -->
               <div class="budget">
                 <div class="btn-flex">
-                  <button id="download-construction" class="download btns">
+                  <button id="download-pdf4" class="download btns">
                     <i class="fa fa-download"></i>
                   </button>
                   <button class="print-button btns" id="print-construction">
                     🖨️
                   </button>
                 </div>
-                <h1>
-                  <span class="text-dark">Construction</span> Budget Estimator
-                </h1>
-                <p class="space">
-                  An interactive tool that helps users plan, estimate, and track
-                  construction costs across all major project phases. It
-                  includes detailed line items such as
-                  <b
-                    >plans and permits, demolition, foundation, framing,
-                    roofing, exterior finishes, windows, garage and driveway,
-                    interior finishes (sheetrock, paint, flooring), kitchens,
-                    bathrooms, plumbing, electrical, HVAC, appliances, yardwork,
-                    basement finishes, and miscellaneous expenses.
-                  </b>
-                  Ideal for homeowners, builders, and investors looking to
-                  maintain financial control and transparency throughout a
-                  construction project.
-                </p>
-                <div
-                  class="row text-center mt-4 card-2 gap-3 justify-content-center"
-                >
-                  <table id="budget-table">
-                    <colgroup>
-                      <col style="width: 15%" />
-                      <col style="width: 35%" />
-                      <col style="width: 25%" />
-                      <col style="width: 25%" />
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>Line Item</th>
-                        <th>Budget</th>
-                        <th>Description</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">01</span>Plans & Permits
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                <div class="budget-content" id="contentPDF4">
+                  <h1>
+                    <span class="text-dark">Construction</span> Budget Estimator
+                  </h1>
+                  <p class="space">
+                    An interactive tool that helps users plan, estimate, and
+                    track construction costs across all major project phases. It
+                    includes detailed line items such as
+                    <b
+                      >plans and permits, demolition, foundation, framing,
+                      roofing, exterior finishes, windows, garage and driveway,
+                      interior finishes (sheetrock, paint, flooring), kitchens,
+                      bathrooms, plumbing, electrical, HVAC, appliances,
+                      yardwork, basement finishes, and miscellaneous expenses.
+                    </b>
+                    Ideal for homeowners, builders, and investors looking to
+                    maintain financial control and transparency throughout a
+                    construction project.
+                  </p>
+                  <div
+                    class="row text-center mt-4 card-2 gap-3 justify-content-center"
+                  >
+                    <table id="budget-table">
+                      <colgroup>
+                        <col style="width: 15%" />
+                        <col style="width: 35%" />
+                        <col style="width: 25%" />
+                        <col style="width: 25%" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>Line Item</th>
+                          <th>Budget</th>
+                          <th>Description</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">01</span>Plans & Permits
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="plansPermitsAmount"
+                                  value="500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
                               <input
-                                type="number"
-                                id="plansPermitsAmount"
-                                value="500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="building"
-                            /><span></span>
-                            Building Permit
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="building"
+                              /><span></span>
+                              Building Permit
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="building-other"
-                            /><span></span>
-                            Building Permit and other permits
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="plans"
-                            /><span></span>
-                            Plans and permits
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="architecture"
-                            /><span></span>
-                            Architecture and structure engineering
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="arch-structure"
-                            /><span></span>
-                            Architect/structure engineering and permits
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe any demolition & cleanout work needed
-                              for this project. Leave blank if you're not doing
-                              work in this category</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">02</span> Demolition
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="demolitionAmount"
-                                value="500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>Most of interior already demoed</p>
-                            </em>
-                            <textarea
-                              name="demolition"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes the plan
-                              &amp; permit-related expenses you are budgeting
-                              for</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">03</span> Foundation
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="building-other"
+                              /><span></span>
+                              Building Permit and other permits
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="foundationAmount"
-                                value="500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>Add description</p>
-                            </em>
-                            <textarea
-                              name="foundation"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe the foundation repairs that will occur
-                              during this renovation</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">04</span> Roof & Gutters
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="plans"
+                              /><span></span>
+                              Plans and permits
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="roofGuttersAmount"
-                                value="8500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-roof"
-                            /><span></span>
-                            New roof
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="architecture"
+                              /><span></span>
+                              Architecture and structure engineering
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-roof"
-                            /><span></span>
-                            Repair roof
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-roof-gutters"
-                            /><span></span>
-                            New roof and new gutters
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-fascia-gutters"
-                            /><span></span>
-                            Repair fascia and /or gutters
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-roof-addition"
-                            /><span></span>
-                            New roof in the addition
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-gutters"
-                            /><span></span>
-                            New gutters
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned roof/gutter work.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">05</span> Exterior / Sliding
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="exteriorSlidingAmount"
-                                value="12000"
-                              />
+                                type="radio"
+                                name="permit"
+                                value="arch-structure"
+                              /><span></span>
+                              Architect/structure engineering and permits
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe any demolition & cleanout work needed
+                                for this project. Leave blank if you're not
+                                doing work in this category</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">02</span> Demolition
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="demolitionAmount"
+                                  value="500"
+                                />
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="siding"
-                            /><span></span>
-                            New siding
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="stucco"
-                            /><span></span>
-                            New stucco
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-paint"
-                            /><span></span>
-                            Repair & paint
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-wash"
-                            /><span></span>
-                            Repair & powerwash
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned exterior/siding work. Use the Project
-                              Description to provide extra details if your
-                              primary tasks don't fall into one of these
-                              categories.
-                            </span>
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">06</span> Windows
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>Most of interior already demoed</p>
+                              </em>
+                              <textarea
+                                name="demolition"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes the plan
+                                &amp; permit-related expenses you are budgeting
+                                for</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">03</span> Foundation
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="foundationAmount"
+                                  value="500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>Add description</p>
+                              </em>
+                              <textarea
+                                name="foundation"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe the foundation repairs that will occur
+                                during this renovation</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">04</span> Roof & Gutters
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="roofGuttersAmount"
+                                  value="8500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
                               <input
-                                type="number"
-                                id="windowsAmount"
-                                value="12000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="replace-all"
-                            /><span></span>
-                            Replace all windows
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="new-roof"
+                              /><span></span>
+                              New roof
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="replace-1-2"
-                            /><span></span>
-                            Replace 1–2 windows
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="replace-3-5"
-                            /><span></span>
-                            Replace 3–5 windows
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="replace-6-10"
-                            /><span></span>
-                            Replace 6–10 windows
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="repair"
-                            /><span></span>
-                            Repair windows as needed
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="windows"
-                              value="new-addition"
-                            /><span></span>
-                            Install new windows in the addition
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes the type of
-                              window work you are budgeting for.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">07</span> Garage & Driveway
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="garageDrivewayAmount"
-                                value="25000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-garage-door"
-                            /><span></span>
-                            New garage door
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="repair-roof"
+                              /><span></span>
+                              Repair roof
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-garage-door"
-                            /><span></span>
-                            Repair garage door
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned garage/driveway work. Use the Project
-                              Description to provide extra details if more than
-                              one of these tasks will be completed during the
-                              project</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">08</span> Framing
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="framingAmount"
-                                value="5000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>
-                                Frame garage, mud room, and open
-                                space(office/flex)
-                              </p>
-                            </em>
-                            <textarea
-                              name="framing"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe the framing work that will occur during
-                              this renovation. List all of the tasks that will
-                              be performed (ex: install LVL beam to open the
-                              layout, install new joists & subfloor in the
-                              bedroom, repair damaged studs on the rear exterior
-                              wall, etc). Leave blank it you're not doing work
-                              in this category</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">09</span> Finish & Carpentry
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="new-roof-gutters"
+                              /><span></span>
+                              New roof and new gutters
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="finishCarpentryAmount"
-                                value="5500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="replace-doors"
-                            /><span></span>
-                            Replace all doors
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="repair-fascia-gutters"
+                              /><span></span>
+                              Repair fascia and /or gutters
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="replace-baseboards"
-                            /><span></span>
-                            Replace all baseboards
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="replace-doors-trims-baseboards"
-                            /><span></span>
-                            Replace all doors / trims and baseboards
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="replace-doors-baseboards"
-                            /><span></span>
-                            Replace doors and baseboards
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="install-hardware"
-                            /><span></span>
-                            Install new hardware
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="install-addition-doors"
-                            /><span></span>
-                            Install all new doors in the addition
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="install-exterior-doors"
-                            /><span></span>
-                            Install new exterior doors
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned door/trim work. Use the Project
-                              Description to provide extra details about your
-                              planned work if you're unsure of which option to
-                              choose</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">10</span> Sheetrock &
-                          Insulation
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="sheetrockInsulationAmount"
-                                value="7000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="sheetrock"
-                              value="replace-all"
-                            /><span></span>
-                            Replace all sheetrock and insulation
-                          </label>
+                                type="radio"
+                                name="permit"
+                                value="new-roof-addition"
+                              /><span></span>
+                              New roof in the addition
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="sheetrock"
-                              value="replace-sheetrock"
-                            /><span></span>
-                            Replace all sheetrock
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="sheetrock"
-                              value="repair-sheetrock"
-                            /><span></span>
-                            Repair sheetrock as needed
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="sheetrock"
-                              value="repair-replace"
-                            /><span></span>
-                            Repair sheetrock and replace where needed
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="sheetrock"
-                              value="addition-new"
-                            /><span></span>
-                            New sheetrock and insulation for the addition
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned sheetrock/insulation work. Use the Project
-                              Description to provide extra details about your
-                              planned work if you're unsure of which option to
-                              choose</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">11</span> Interior Paint
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="interiorPaintAmount"
-                                value="7000"
-                              />
+                                type="radio"
+                                name="permit"
+                                value="new-gutters"
+                              /><span></span>
+                              New gutters
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned roof/gutter work.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">05</span> Exterior /
+                            Sliding
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="exteriorSlidingAmount"
+                                  value="12000"
+                                />
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-paint"
-                            /><span></span>
-                            New paint throughout the interior
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="paint-touchups"
-                            /><span></span>
-                            Paint touchups
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes your
-                              planned work. This line should account for
-                              interior painting only (exterior painting should
-                              be captured in line 5).</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">12</span> Flooring
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                          </td>
+                          <td class="description">
+                            <label>
                               <input
-                                type="number"
-                                id="flooringAmount"
-                                value="8500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>New hardwood and carpet</p>
-                            </em>
-                            <textarea
-                              name="flooring"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe the flooring work that will occur during
-                              this renovation. Specify the the type of
-                              material(s) used along with the location(s) of the
-                              new flooring. Please state if an existing floors
-                              will be refinished. Leave blank if you're not
-                              doing work in this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">13</span> Kitchen
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="siding"
+                              /><span></span>
+                              New siding
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="kitchenAmount"
-                                value="10000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>New cabinets and stone counter tops</p>
-                            </em>
-                            <textarea
-                              name="kitchen"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe the kitchen work that will occur during
-                              this renovation. Tell us if you intend to
-                              refurbish the cabinets/countertops, or if all-new
-                              materials will be installed. If new countertops
-                              will be installed, note the material type If the
-                              property has more than 1 kitchen, describe the
-                              work that will occur in each kitchen. Leave blank
-                              if you're not doing work in this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">14</span> Bathrooms
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="stucco"
+                              /><span></span>
+                              New stucco
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="bathroomAmount"
-                                value="7500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>Update bathroom with tile and new vanities</p>
-                            </em>
-                            <textarea
-                              name="bathrooms"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe the work that will occur in each
-                              bathroom, including the type of materials that
-                              will be installed. Rough plumbing work should be
-                              captured separately in Line 15 below. Leave blank
-                              if you're not doing work in this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">15</span> Plumbing work
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="permit"
+                                value="repair-paint"
+                              /><span></span>
+                              Repair & paint
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="plumbingWorkAmount"
-                                value="10000"
-                              />
+                                type="radio"
+                                name="permit"
+                                value="repair-wash"
+                              /><span></span>
+                              Repair & powerwash
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned exterior/siding work. Use the Project
+                                Description to provide extra details if your
+                                primary tasks don't fall into one of these
+                                categories.
+                              </span>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">06</span> Windows
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="windowsAmount"
+                                  value="12000"
+                                />
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-plumbing"
-                            /><span></span>
-                            All new plumbing system
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-plumbing"
-                            /><span></span>
-                            Repair plumbing system
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-water-heater"
-                            /><span></span>
-                            Install new water heater
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="plumbing-addition"
-                            /><span></span>
-                            New plumbing system for the addition
-                          </label>
-                        </td>
-
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes the rough
-                              plumbing work that will occur during this
-                              renovation. If more than one option is applicable,
-                              select the that best describes the primary
-                              task</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">16</span> Electrical work
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                          </td>
+                          <td class="description">
+                            <label>
                               <input
-                                type="number"
-                                id="electricalWorkAmount"
-                                value="12000"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="repair-electric"
-                            /><span></span>
-                            Repair electric system
-                          </label>
+                                type="radio"
+                                name="windows"
+                                value="replace-all"
+                              /><span></span>
+                              Replace all windows
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="new-light-fixtures"
-                            /><span></span>
-                            All new light fixtures and switches / outlets
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="permit"
-                              value="full-electrical"
-                            /><span></span>
-                            All new electrical system with all new light
-                            fixtures
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes the
-                              electrical work that will occur during this
-                              renovation. If more than one option is applicable,
-                              select the one that best describes the primary
-                              task.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">17</span> HVAC Work
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="hvacWorkAmount"
-                                value="0"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="all-new"
-                            /><span></span>
-                            All new HVAC system
-                          </label>
+                                type="radio"
+                                name="windows"
+                                value="replace-1-2"
+                              /><span></span>
+                              Replace 1–2 windows
+                            </label>
 
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="repair"
-                            /><span></span>
-                            Repair HVAC system
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="replace-electric-gas"
-                            /><span></span>
-                            Replace HVAC system from electric to gas
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="install-furnace"
-                            /><span></span>
-                            Install new furnace
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="install-furnace-ducting"
-                            /><span></span>
-                            Install new furnace with new ducting
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="install-ac"
-                            /><span></span>
-                            Install new AC system
-                          </label>
-
-                          <label>
-                            <input
-                              type="radio"
-                              name="hvac"
-                              value="install-hvac-addition"
-                            /><span></span>
-                            Install new HVAC system for the addition
-                          </label>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Select the option that best describes the HVAC
-                              work that will occur during this renovation. If
-                              more than one option is applicable, select the one
-                              that best describes the primary task.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">18</span> Appliances
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                            <label>
                               <input
-                                type="number"
-                                id="appliancesAmount"
-                                value="3500"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <em>
-                              <p>New SS Appliances</p>
-                            </em>
-                            <textarea
-                              name="appliances"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >List any new appliances that will be installed
-                              during this renovation. Leave blank if you're not
-                              doing work in this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">19</span> Yard / Landscaping
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="windows"
+                                value="replace-3-5"
+                              /><span></span>
+                              Replace 3–5 windows
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="yardLandscapingAmount"
-                                value="25"
-                              />
-                            </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <p>Clean up yard</p>
-                            <textarea
-                              name="yard"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe any site or landscaping improvements
-                              that are planned during the renovation (ex: tree
-                              removal, install new privacy fence, plant new
-                              shrubs/flowers, etc.). Leave blank if you're not
-                              doing work in this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">20</span> Basement Finishes
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
+                                type="radio"
+                                name="windows"
+                                value="replace-6-10"
+                              /><span></span>
+                              Replace 6–10 windows
+                            </label>
+
+                            <label>
                               <input
-                                type="number"
-                                id="basementFinishesAmount"
-                                value="0"
-                              />
+                                type="radio"
+                                name="windows"
+                                value="repair"
+                              /><span></span>
+                              Repair windows as needed
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="windows"
+                                value="new-addition"
+                              /><span></span>
+                              Install new windows in the addition
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes the type
+                                of window work you are budgeting for.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">07</span> Garage &
+                            Driveway
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="garageDrivewayAmount"
+                                  value="25000"
+                                />
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <p></p>
-                            <textarea
-                              name="basement"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >Describe any improvements that will occur in the
-                              basement of the property. Basement work should be
-                              excluded from the other line items in this Scope
-                              of Work. Leave blank if you're not doing work in
-                              this category.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="line-item">
-                          <span class="line-number">21</span> Miscellaneous
-                        </td>
-                        <td class="amount-col">
-                          <div class="amount-wrapper">
-                            <label>Amount</label>
-                            <div class="budget-amount">
-                              <span>$</span>
-                              <input type="number" id="miscAmount" value="0" />
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="new-garage-door"
+                              /><span></span>
+                              New garage door
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="repair-garage-door"
+                              /><span></span>
+                              Repair garage door
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned garage/driveway work. Use the Project
+                                Description to provide extra details if more
+                                than one of these tasks will be completed during
+                                the project</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">08</span> Framing
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="framingAmount"
+                                  value="5000"
+                                />
+                              </div>
                             </div>
-                          </div>
-                        </td>
-                        <td class="description">
-                          <section>
-                            <label>Description</label>
-                            <p></p>
-                            <textarea
-                              name="misc"
-                              cols="25"
-                              rows="6"
-                              maxlength="100"
-                            ></textarea>
-                          </section>
-                        </td>
-                        <td class="notes">
-                          <p>
-                            <span>&#9432;</span>
-                            <span
-                              >This line can be used to capture work that
-                              doesn't fit into other line items. If multiple
-                              tasks are listed here please note itemized budgets
-                              within the description for each task.</span
-                            >
-                          </p>
-                        </td>
-                      </tr>
-                      <tr></tr>
-                    </tbody>
-                    <tfoot>
-                      <tr id="budget-total">
-                        <td>Total Construction Cost</td>
-                        <td colspan="4" id="budget-total-amt">
-                          Total Calculation Amount will come here
-                        </td>
-                      </tr>
-                    </tfoot>
-                  </table>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>
+                                  Frame garage, mud room, and open
+                                  space(office/flex)
+                                </p>
+                              </em>
+                              <textarea
+                                name="framing"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe the framing work that will occur
+                                during this renovation. List all of the tasks
+                                that will be performed (ex: install LVL beam to
+                                open the layout, install new joists & subfloor
+                                in the bedroom, repair damaged studs on the rear
+                                exterior wall, etc). Leave blank it you're not
+                                doing work in this category</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">09</span> Finish &
+                            Carpentry
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="finishCarpentryAmount"
+                                  value="5500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="replace-doors"
+                              /><span></span>
+                              Replace all doors
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="replace-baseboards"
+                              /><span></span>
+                              Replace all baseboards
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="replace-doors-trims-baseboards"
+                              /><span></span>
+                              Replace all doors / trims and baseboards
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="replace-doors-baseboards"
+                              /><span></span>
+                              Replace doors and baseboards
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="install-hardware"
+                              /><span></span>
+                              Install new hardware
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="install-addition-doors"
+                              /><span></span>
+                              Install all new doors in the addition
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="install-exterior-doors"
+                              /><span></span>
+                              Install new exterior doors
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned door/trim work. Use the Project
+                                Description to provide extra details about your
+                                planned work if you're unsure of which option to
+                                choose</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">10</span> Sheetrock &
+                            Insulation
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="sheetrockInsulationAmount"
+                                  value="7000"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="sheetrock"
+                                value="replace-all"
+                              /><span></span>
+                              Replace all sheetrock and insulation
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="sheetrock"
+                                value="replace-sheetrock"
+                              /><span></span>
+                              Replace all sheetrock
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="sheetrock"
+                                value="repair-sheetrock"
+                              /><span></span>
+                              Repair sheetrock as needed
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="sheetrock"
+                                value="repair-replace"
+                              /><span></span>
+                              Repair sheetrock and replace where needed
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="sheetrock"
+                                value="addition-new"
+                              /><span></span>
+                              New sheetrock and insulation for the addition
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned sheetrock/insulation work. Use the
+                                Project Description to provide extra details
+                                about your planned work if you're unsure of
+                                which option to choose</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">11</span> Interior Paint
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="interiorPaintAmount"
+                                  value="7000"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="new-paint"
+                              /><span></span>
+                              New paint throughout the interior
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="paint-touchups"
+                              /><span></span>
+                              Paint touchups
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes your
+                                planned work. This line should account for
+                                interior painting only (exterior painting should
+                                be captured in line 5).</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">12</span> Flooring
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="flooringAmount"
+                                  value="8500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>New hardwood and carpet</p>
+                              </em>
+                              <textarea
+                                name="flooring"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe the flooring work that will occur
+                                during this renovation. Specify the the type of
+                                material(s) used along with the location(s) of
+                                the new flooring. Please state if an existing
+                                floors will be refinished. Leave blank if you're
+                                not doing work in this category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">13</span> Kitchen
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="kitchenAmount"
+                                  value="10000"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>New cabinets and stone counter tops</p>
+                              </em>
+                              <textarea
+                                name="kitchen"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe the kitchen work that will occur
+                                during this renovation. Tell us if you intend to
+                                refurbish the cabinets/countertops, or if
+                                all-new materials will be installed. If new
+                                countertops will be installed, note the material
+                                type If the property has more than 1 kitchen,
+                                describe the work that will occur in each
+                                kitchen. Leave blank if you're not doing work in
+                                this category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">14</span> Bathrooms
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="bathroomAmount"
+                                  value="7500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>
+                                  Update bathroom with tile and new vanities
+                                </p>
+                              </em>
+                              <textarea
+                                name="bathrooms"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe the work that will occur in each
+                                bathroom, including the type of materials that
+                                will be installed. Rough plumbing work should be
+                                captured separately in Line 15 below. Leave
+                                blank if you're not doing work in this
+                                category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">15</span> Plumbing work
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="plumbingWorkAmount"
+                                  value="10000"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="new-plumbing"
+                              /><span></span>
+                              All new plumbing system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="repair-plumbing"
+                              /><span></span>
+                              Repair plumbing system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="new-water-heater"
+                              /><span></span>
+                              Install new water heater
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="plumbing-addition"
+                              /><span></span>
+                              New plumbing system for the addition
+                            </label>
+                          </td>
+
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes the rough
+                                plumbing work that will occur during this
+                                renovation. If more than one option is
+                                applicable, select the that best describes the
+                                primary task</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">16</span> Electrical work
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="electricalWorkAmount"
+                                  value="12000"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="repair-electric"
+                              /><span></span>
+                              Repair electric system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="new-light-fixtures"
+                              /><span></span>
+                              All new light fixtures and switches / outlets
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="permit"
+                                value="full-electrical"
+                              /><span></span>
+                              All new electrical system with all new light
+                              fixtures
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes the
+                                electrical work that will occur during this
+                                renovation. If more than one option is
+                                applicable, select the one that best describes
+                                the primary task.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">17</span> HVAC Work
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="hvacWorkAmount"
+                                  value="0"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="all-new"
+                              /><span></span>
+                              All new HVAC system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="repair"
+                              /><span></span>
+                              Repair HVAC system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="replace-electric-gas"
+                              /><span></span>
+                              Replace HVAC system from electric to gas
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="install-furnace"
+                              /><span></span>
+                              Install new furnace
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="install-furnace-ducting"
+                              /><span></span>
+                              Install new furnace with new ducting
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="install-ac"
+                              /><span></span>
+                              Install new AC system
+                            </label>
+
+                            <label>
+                              <input
+                                type="radio"
+                                name="hvac"
+                                value="install-hvac-addition"
+                              /><span></span>
+                              Install new HVAC system for the addition
+                            </label>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Select the option that best describes the HVAC
+                                work that will occur during this renovation. If
+                                more than one option is applicable, select the
+                                one that best describes the primary task.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">18</span> Appliances
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="appliancesAmount"
+                                  value="3500"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <em>
+                                <p>New SS Appliances</p>
+                              </em>
+                              <textarea
+                                name="appliances"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >List any new appliances that will be installed
+                                during this renovation. Leave blank if you're
+                                not doing work in this category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">19</span> Yard /
+                            Landscaping
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="yardLandscapingAmount"
+                                  value="25"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <p>Clean up yard</p>
+                              <textarea
+                                name="yard"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe any site or landscaping improvements
+                                that are planned during the renovation (ex: tree
+                                removal, install new privacy fence, plant new
+                                shrubs/flowers, etc.). Leave blank if you're not
+                                doing work in this category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">20</span> Basement
+                            Finishes
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="basementFinishesAmount"
+                                  value="0"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <p></p>
+                              <textarea
+                                name="basement"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >Describe any improvements that will occur in
+                                the basement of the property. Basement work
+                                should be excluded from the other line items in
+                                this Scope of Work. Leave blank if you're not
+                                doing work in this category.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="line-item">
+                            <span class="line-number">21</span> Miscellaneous
+                          </td>
+                          <td class="amount-col">
+                            <div class="amount-wrapper">
+                              <label>Amount</label>
+                              <div class="budget-amount">
+                                <span>$</span>
+                                <input
+                                  type="number"
+                                  id="miscAmount"
+                                  value="0"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td class="description">
+                            <section>
+                              <label>Description</label>
+                              <p></p>
+                              <textarea
+                                name="misc"
+                                cols="25"
+                                rows="6"
+                                maxlength="100"
+                              ></textarea>
+                            </section>
+                          </td>
+                          <td class="notes">
+                            <p>
+                              <span>&#9432;</span>
+                              <span
+                                >This line can be used to capture work that
+                                doesn't fit into other line items. If multiple
+                                tasks are listed here please note itemized
+                                budgets within the description for each
+                                task.</span
+                              >
+                            </p>
+                          </td>
+                        </tr>
+                        <tr></tr>
+                      </tbody>
+                      <tfoot>
+                        <tr id="budget-total">
+                          <td>Total Construction Cost</td>
+                          <td colspan="4" id="budget-total-amt">
+                            Total Calculation Amount will come here
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
