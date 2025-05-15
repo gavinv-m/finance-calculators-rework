@@ -122,10 +122,6 @@ export default function calculateHouseFlip() {
     netProfit > 0 && monthlyRent > 0
       ? (netProfit / monthlyRent).toFixed(2)
       : 'N/A';
-  // ✅ Profit Min % and $ Calculation
-  let profitMinPercent = (profitMargin * 0.8).toFixed(2); // Assuming 80% of profit margin as min
-  let profitMinDollar = (netProfit * 0.8).toFixed(2); // 80% of the net profit as min
-  let projection = (netProfit * 0.9).toFixed(2); // Projection at 90% of the net profit
 
   // ✅ Deal? Logic
   let deal =
@@ -164,7 +160,6 @@ export default function calculateHouseFlip() {
   let maxPurchasePrice = arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
 
   // ✅ Display Results
-  // document.getElementById("grossProfit").innerText = formatNumber(grossProfit);
   document.getElementById('totalInvestment').innerText =
     formatNumber(totalInvestment);
   document.getElementById('netProfit').innerText = formatNumber(netProfit);
@@ -182,15 +177,10 @@ export default function calculateHouseFlip() {
         : `Best to rent. ${rentalVsFlip} rental months to match flip profit.`
       : 'N/A';
 
-  // document.getElementById("profitMinPercent").innerText = `${profitMinPercent}%`;
-  // document.getElementById("profitMinDollar").innerText = `${formatNumber(profitMinDollar)}`;
-  // document.getElementById("projection").innerText = `${formatNumber(projection)}`;
   document.getElementById('dealStatus').innerText = deal;
   document.getElementById('monthlyHoldingCost').innerText = `${formatNumber(
     monthlyHoldingCost
   )}`;
-  // document.getElementById("proratedTaxes").innerText = formatNumber(proratedTaxes);
-  // document.getElementById("proratedInsurance").innerText = formatNumber(proratedInsurance);
   document.getElementById('displayedAddress').innerText = address
     ? `📍 ${address}`
     : '';
@@ -201,15 +191,10 @@ export default function calculateHouseFlip() {
     document.getElementById('calculatedGapCost').innerText = formatNumber(0);
   }
 
-  // document.getElementById("requiredARV").innerText = formatNumber(requiredARV);
   document.getElementById('maxPurchasePrice').innerText =
     maxPurchasePrice > 0 ? formatNumber(maxPurchasePrice) : 0;
 
   // ✅ Color Code Cards
-  // let grossProfitCard = document.querySelector(".grossProfitcard");
-  // grossProfitCard.style.backgroundColor = grossProfit >= 0 ? "#d0b870" : "#f86d6d";
-  // document.querySelector(".grosspro").style.color = grossProfit >= 0 ? "black" : "#d0b870";
-
   let netProfitEl = document.getElementById('netProfit');
   let netprocard = document.querySelector('.netprocard');
   let netprocardhead = document.querySelector('.netprocardhead');
