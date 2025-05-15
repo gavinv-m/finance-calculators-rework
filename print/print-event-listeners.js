@@ -13,4 +13,10 @@ export default function initializePrintListeners() {
   rentalBtn.addEventListener('click', () => {
     printChartsAndTable('.rentalcharts', '.table-responsive', '.rental');
   });
+
+  // Budget:
+  const budgetBtn = document.getElementById('print-construction');
+  budgetBtn.addEventListener('click', () => {
+    printSpecificSection(['.budget-content']);
+  });
 }
