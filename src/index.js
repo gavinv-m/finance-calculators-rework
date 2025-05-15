@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Budgeting
   const input4 = document.querySelectorAll(
-    '#plansPermitsAmount, #demolitionAmount, #foundationAmount, #roofGuttersAmount, #exteriorSlidingAmount, #windowsAmount, #garageDrivewayAmount, #framingAmount, #finishCarpentryAmount, #sheetrockInsulationAmount, #interiorPaintAmount, #flooringAmount, #kitchenAmount, #bathroomAmount, #plumbingWorkAmount, #electricalWorkAmount, #hvacWorkAmount, #appliancesAmount, #yardLandscapingAmount, #basementFinishesAmount, #miscAmount'
+    '#plansPermitsAmount, #demolitionAmount, #foundationAmount, #roofGuttersAmount, #exteriorSlidingAmount, #windowsAmount, #garageDrivewayAmount, #framingAmount, #finishCarpentryAmount, #sheetrockInsulationAmount, #interiorPaintAmount, #flooringAmount, #kitchenAmount, #bathroomAmount, #plumbingWorkAmount, #electricalWorkAmount, #hvacWorkAmount, #appliancesAmount, #yardLandscapingAmount, #basementFinishesAmount, #overagePercent, #miscAmount'
   );
   input4.forEach((input) => {
     input.addEventListener('input', calculateConstructionCost);

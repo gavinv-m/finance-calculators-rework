@@ -25,13 +25,18 @@ export default function calculateConstructionCost() {
     'miscAmount',
   ];
 
-  let total = 0;
+  let baseTotal = 0;
 
   budgetingFields.forEach((id) => {
     const el = document.getElementById(id);
     const rawValue = Number(el.value || 0);
-    total += rawValue;
+    baseTotal += rawValue;
   });
+
+  const overageInput = document.getElementById('overagePercent');
+  const overagePercent = Number(overageInput?.value || 0);
+  const overageAmount = baseTotal * (overagePercent / 100);
+  const total = baseTotal + overageAmount;
 
   document.getElementById('budget-total-amt').innerText = formatNumber(total);
 }
