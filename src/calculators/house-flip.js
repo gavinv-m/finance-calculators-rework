@@ -58,19 +58,6 @@ export default function calculateHouseFlip() {
 
   let loanFees = (loanAmount * loanPoints) / 100;
   let loanInterest = loanAmount * monthlyRate * months;
-  let totalProjectCost =
-    purchase +
-    reno +
-    holding +
-    closing +
-    resaleCosts +
-    loanInterest +
-    loanFees +
-    proratedTaxes +
-    proratedInsurance +
-    proratedMaintenance +
-    proratedUtilities;
-  // **Corrected Investment Calculation**
   let gapFundingFees = gapFundingAmt * (gapFundingRate / 100 / 12) * months;
 
   let totalInvestment =
@@ -80,6 +67,7 @@ export default function calculateHouseFlip() {
     closing +
     loanInterest +
     loanFees +
+    gapFundingAmt +
     gapFundingFees +
     proratedTaxes +
     proratedInsurance +
@@ -100,7 +88,6 @@ export default function calculateHouseFlip() {
     loanFees;
 
   // ✅ Profit Calculation
-  let grossProfit = arv - purchase;
   let netProfit = arv - totalInvestment - resaleCosts;
 
   // ✅ Profit Margin & Cash-on-Cash Return
