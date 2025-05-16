@@ -3,6 +3,7 @@ import formatNumberPercent from '../utils/format-number-percent';
 import resetCanvas from '../chart-utils/reset-canvas';
 import createProjectCostBreakdownChart from '../charts/project-cost-breakdown-chart';
 import createARVDistributionChart from '../charts/arv-distribution-chart';
+import calculateMaxPurchasePrice from '../utils/max-purchase';
 
 export default function calculateHouseFlip() {
   let purchase =
@@ -126,23 +127,9 @@ export default function calculateHouseFlip() {
   // ✅ Deal? Logic
   let deal =
     profitMargin >= desiredProfitMargin && netProfit > 0 ? 'YES' : 'NO';
-  let requiredARV =
-    desiredProfitMargin > 0
-      ? totalInvestment / (1 - desiredProfitMargin / 100)
-      : 0;
-  let totalInvestmentExcludingPurchase =
-    reno +
-    holding +
-    loanInterest +
-    loanFees +
-    gapFundingFees +
-    proratedTaxes +
-    proratedInsurance +
-    proratedMaintenance +
-    proratedUtilities;
 
-  let targetNetProfit =
-    (totalInvestmentExcludingPurchase + purchase) * (desiredProfitMargin / 100);
+  // Max Purchase Price Calculation
+  let targetNetProfit = arv * (desiredProfitMargin / 100);
 
   // But since we want to solve for purchase (maxPurchasePrice), we need to restructure:
   let allOtherCosts =
@@ -157,8 +144,20 @@ export default function calculateHouseFlip() {
 
   let purchasePriceEstimate =
     arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
-  // TODO: Call the function here
-  let maxPurchasePrice;
+
+  let maxPurchasePrice = calculateMaxPurchasePrice(
+    allOtherCosts,
+    arv,
+    purchasePriceEstimate,
+    downPaymentPercent,
+    downPaymentType,
+    loanPoints,
+    monthlyRate,
+    months,
+    resaleCosts,
+    reno,
+    targetNetProfit
+  );
 
   // ✅ Display Results
   document.getElementById('totalInvestment').innerText =
@@ -210,7 +209,7 @@ export default function calculateHouseFlip() {
   profitMarginEl.style.color =
     profitMargin >= desiredProfitMargin ? 'black' : 'black';
   promarcardhead.style.color =
-    profitMargin >= desiredProfitMargin ? '#d0b870' : 'black'; // gold if profit, red if loss
+    profitMargin >= desiredProfitMargin ? 'black' : '#d0b870'; // gold if profit, red if loss
   promarcard.style.background =
     profitMargin === 0
       ? '#ffffff'
