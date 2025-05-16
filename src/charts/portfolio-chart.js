@@ -1,5 +1,12 @@
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import {
+  Chart,
+  PieController,
+  ArcElement,
+  Tooltip,
+  Legend,
+  Title,
+} from 'chart.js';
+Chart.register(PieController, ArcElement, Tooltip, Legend, Title);
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function renderPortfolioPieChart(

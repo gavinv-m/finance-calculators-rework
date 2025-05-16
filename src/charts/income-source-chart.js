@@ -1,5 +1,5 @@
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import { Chart, ArcElement, Tooltip, Legend, Title } from 'chart.js';
+Chart.register(ArcElement, Tooltip, Legend, Title);
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 let incomeSourceChartInstance;

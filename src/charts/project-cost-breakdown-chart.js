@@ -1,5 +1,12 @@
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
+import {
+  Chart,
+  DoughnutController,
+  ArcElement,
+  Tooltip,
+  Legend,
+  Title,
+} from 'chart.js';
+Chart.register(DoughnutController, ArcElement, Tooltip, Legend, Title);
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function createProjectCostBreakdownChart(data) {
