@@ -64,6 +64,7 @@ export default function calculateHouseFlip() {
   let totalInvestment =
     purchase +
     reno +
+    downPayment +
     holding +
     closing +
     loanInterest +
