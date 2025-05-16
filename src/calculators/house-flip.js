@@ -146,18 +146,19 @@ export default function calculateHouseFlip() {
 
   // But since we want to solve for purchase (maxPurchasePrice), we need to restructure:
   let allOtherCosts =
-    reno +
     holding +
     closing +
     resaleCosts +
-    loanFees +
     gapFundingFees +
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
     proratedUtilities;
 
-  let maxPurchasePrice = arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
+  let purchasePriceEstimate =
+    arv * (1 - desiredProfitMargin / 100) - allOtherCosts;
+  // TODO: Call the function here
+  let maxPurchasePrice;
 
   // ✅ Display Results
   document.getElementById('totalInvestment').innerText =
