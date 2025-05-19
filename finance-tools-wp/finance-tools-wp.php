@@ -1,121 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <style>
-      html {
-        visibility: hidden;
-        opacity: 0;
-      }
-    </style>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script defer src="main.js"></script></head>
+<?php
+/**
+ * Plugin Name: Finance Tools WP
+ * Description: Calculator for LWG
+ * Version: 1.0
+ * Author: Gavin
+ * License: GPL2
+ */
 
-  <body>
-    <header>
-      <div class="container">
-        <div class="header-sec">
-          <div class="logo">
-            <a href="https://joinlegacywealthgroup.com/" target="_blank"
-              ><img src="assets/Asset 4@4x.png" class="logo"
-            /></a>
-          </div>
-          <div class="iconbar" id="menu">
-            <ul class="icon-list list-unstyled mb-0">
-              <li class="icon-item">
-                <a
-                  href="https://www.youtube.com/@therealcoreywright"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span class="uk-icon youtube"
-                    ><svg width="20" height="20" viewBox="0 0 20 20">
-                      <path
-                        d="M15,4.1c1,0.1,2.3,0,3,0.8c0.8,0.8,0.9,2.1,0.9,3.1C19,9.2,19,10.9,19,12c-0.1,1.1,0,2.4-0.5,3.4c-0.5,1.1-1.4,1.5-2.5,1.6 c-1.2,0.1-8.6,0.1-11,0c-1.1-0.1-2.4-0.1-3.2-1c-0.7-0.8-0.7-2-0.8-3C1,11.8,1,10.1,1,8.9c0-1.1,0-2.4,0.5-3.4C2,4.5,3,4.3,4.1,4.2 C5.3,4.1,12.6,4,15,4.1z M8,7.5v6l5.5-3L8,7.5z"
-                      ></path></svg
-                  ></span>
-                </a>
-              </li>
-              <li class="icon-item">
-                <a
-                  href="https://www.instagram.com/therealcoreywright/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <span uk-icon="icon: instagram;" class="uk-icon"
-                    ><svg width="20" height="20" viewBox="0 0 20 20">
-                      <path
-                        d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z"
-                      ></path>
-                      <circle cx="14.87" cy="5.26" r="1.09"></circle>
-                      <path
-                        d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z"
-                      ></path></svg
-                  ></span>
-                </a>
-              </li>
-              <li class="icon-item">
-                <a
-                  href="https://www.facebook.com/thecwright"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <span uk-icon="icon: facebook;" class="uk-icon"
-                    ><svg width="20" height="20" viewBox="0 0 20 20">
-                      <path
-                        d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"
-                      ></path></svg
-                  ></span>
-                </a>
-              </li>
-              <li class="icon-item">
-                <a
-                  href="https://www.tiktok.com/@therealcoreywright"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <span uk-icon="icon: tiktok;" class="uk-icon"
-                    ><svg
-                      fill="#000000"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+ // Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Enqueue scripts and styles
+add_action('wp_enqueue_scripts', function () {
+    // Load external dependencies
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap-icon', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+    wp_enqueue_script('jspdf', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', ['jquery'], '2.5.1');
+    wp_enqueue_script('html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', ['jquery'], '1.4.1');
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.0');
+    
+    // Load your bundled files
+    wp_enqueue_style('finance-tools-css', plugin_dir_url(__FILE__) . 'main.css', [], '1.0.0');
+    wp_enqueue_script('finance-tools-js', plugin_dir_url(__FILE__) . 'main.js', ['jquery'], '1.0.0', true);
+});
+
+add_action('wp_head', function () {
+?>
+    <style>
+        .lwg_finance_calculator {
+            background: #FFFFFF;
+            font-family: 'Arial';
+            padding: 15px;
+        }
+    </style>
+<?php
+});
+
+
+add_shortcode('lwg_finance_calculator', function () {
+    ob_start();
+?>
+    <div class="lwg_finance_calculator">
+        <header>
+            <div class="container">
+                <div class="header-sec">
+                <div class="logo">
+                    <a href="https://joinlegacywealthgroup.com/" target="_blank"
+                    ><img src="<?php echo plugin_dir_url(__FILE__) . 'assets/Asset 4@4x.png'; ?>" class="logo"
+                    /></a>
+                </div>
+                <div class="iconbar" id="menu">
+                    <ul class="icon-list list-unstyled mb-0">
+                    <li class="icon-item">
+                        <a
+                        href="https://www.youtube.com/@therealcoreywright"
+                        target="_blank"
+                        rel="noreferrer"
+                        >
+                        <span class="uk-icon youtube"
+                            ><svg width="20" height="20" viewBox="0 0 20 20">
+                            <path
+                                d="M15,4.1c1,0.1,2.3,0,3,0.8c0.8,0.8,0.9,2.1,0.9,3.1C19,9.2,19,10.9,19,12c-0.1,1.1,0,2.4-0.5,3.4c-0.5,1.1-1.4,1.5-2.5,1.6 c-1.2,0.1-8.6,0.1-11,0c-1.1-0.1-2.4-0.1-3.2-1c-0.7-0.8-0.7-2-0.8-3C1,11.8,1,10.1,1,8.9c0-1.1,0-2.4,0.5-3.4C2,4.5,3,4.3,4.1,4.2 C5.3,4.1,12.6,4,15,4.1z M8,7.5v6l5.5-3L8,7.5z"
+                            ></path></svg
+                        ></span>
+                        </a>
+                    </li>
+                    <li class="icon-item">
+                        <a
+                        href="https://www.instagram.com/therealcoreywright/"
+                        rel="noreferrer"
+                        target="_blank"
+                        >
+                        <span uk-icon="icon: instagram;" class="uk-icon"
+                            ><svg width="20" height="20" viewBox="0 0 20 20">
+                            <path
+                                d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z"
+                            ></path>
+                            <circle cx="14.87" cy="5.26" r="1.09"></circle>
+                            <path
+                                d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z"
+                            ></path></svg
+                        ></span>
+                        </a>
+                    </li>
+                    <li class="icon-item">
+                        <a
+                        href="https://www.facebook.com/thecwright"
+                        rel="noreferrer"
+                        target="_blank"
+                        >
+                        <span uk-icon="icon: facebook;" class="uk-icon"
+                            ><svg width="20" height="20" viewBox="0 0 20 20">
+                            <path
+                                d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"
+                            ></path></svg
+                        ></span>
+                        </a>
+                    </li>
+                    <li class="icon-item">
+                        <a
+                        href="https://www.tiktok.com/@therealcoreywright"
+                        rel="noreferrer"
+                        target="_blank"
+                        >
+                        <span uk-icon="icon: tiktok;" class="uk-icon"
+                            ><svg
+                            fill="#000000"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"
+                                ></path>
+                            </g>
+                            </svg>
+                        </span>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </header>
 
     <div class="container mt-5 text-center" id="pdf_content">
       <div class="row mob-block">
@@ -313,7 +330,7 @@
                         class="form-control"
                         id="holdingCosts"
                         placeholder="Enter amount"
-                        value="0"
+                        value=""
                       />
                       <label for="holdingCosts">Holding Costs</label>
                       <span class="error" id="errorHolding"></span>
@@ -1197,7 +1214,7 @@
                   <b
                     >purchase costs, renovation expenses, carrying costs,
                     after-repair value (ARV), and projected profits</b
-                  >. Whether you're a seasoned investor or new to house
+                  >. Whether you are a seasoned investor or new to house
                   flipping, this tool provides <b>data-driven insights</b> to
                   make informed decisions, minimize risks, and maximize returns
                   on your investment. Try it today and streamline your house
@@ -2529,7 +2546,7 @@
         <div class="footer-sec row">
           <div class="logo footer-item col-md-2">
             <a href="https://joinlegacywealthgroup.com/" target="_blank">
-              <img src="assets/white-gold.svg" alt="logo" class="logo" />
+              <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/white-gold.svg'; ?>" alt="logo" class="logo" />
             </a>
           </div>
           <div class="copyright footer-item col-md-10">
@@ -2538,8 +2555,14 @@
         </div>
       </div>
     </footer>
+</div>
+<?php
+    return ob_get_clean();
+});
 
-    <script>
+add_action('wp_footer', function () {
+    ?>
+        <script>
       function toggleMenu() {
         var menu = document.getElementById('menu');
         menu.style.display =
@@ -2548,8 +2571,7 @@
             : 'none';
       }
     </script>
-    <!-- <script src="calculator.js"></script> -->
-    <!-- tooltip js start -->
+
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var tooltipTriggerList = document.querySelectorAll(
@@ -2676,7 +2698,5 @@
         select.appendChild(option);
       }
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    <?php
+});

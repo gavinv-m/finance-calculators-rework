@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'finance-tools-wp'),
     assetModuleFilename: 'assets/[name][ext]',
   },
   performance: {
@@ -20,7 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -62,6 +63,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/calculator.html',
       filename: 'index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
     }),
   ],
 };
