@@ -216,6 +216,7 @@ export default function calculateRentalProperty() {
     monthlyUtilities +
     monthlyRenovations;
 
+  // Portfolio Chart Logic
   // Rent projections
   for (let i = 0; i < timeDuration; i++) {
     let yearRent = monthlyRent * 12 * Math.pow(1 + rentGrowth / 100, i);
@@ -259,6 +260,21 @@ export default function calculateRentalProperty() {
     0
   );
 
+  // Cash Flow Chart Logic
+  let mortgageProjections = [];
+
+  for (let i = 0; i < timeDuration; i++) {
+    mortgageProjections.push(annualMortgagePayment);
+  }
+
+  // Calculate cumulative totals for cash flow chart
+  let cumulativeMortgage = mortgageProjections.reduce(
+    (sum, payment) => sum + payment,
+    0
+  );
+  let cumulativeNetCashFlow =
+    cumulativeIncome - cumulativeExpenses - cumulativeMortgage;
+
   // ✅ Display Results
   document.getElementById('loanAmount').innerText = formatNumber(loanAmount);
   document.getElementById('mortgagePayment').innerText =
@@ -292,9 +308,9 @@ export default function calculateRentalProperty() {
   );
 
   renderCashFlowPieChart(
-    annualMortgagePayment,
-    operatingExpenses,
-    cashFlowAnnual,
+    cumulativeMortgage,
+    cumulativeExpenses,
+    cumulativeNetCashFlow,
     timeDuration
   );
   var year = parseFloat(document.getElementById('years_tbl').value.trim()) || 1;

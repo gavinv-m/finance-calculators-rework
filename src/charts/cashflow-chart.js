@@ -10,9 +10,9 @@ Chart.register(PieController, ArcElement, Tooltip, Legend, Title);
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function renderCashFlowPieChart(
-  mortgagePaymentAnnual,
-  operatingExpenses,
-  cashFlowAnnual,
+  cumulativeMortgage,
+  cumulativeExpenses,
+  cumulativeNetCashFlow,
   timeDuration = 1
 ) {
   const ctx = document.getElementById('cashFlowPieChart').getContext('2d');
@@ -21,20 +21,15 @@ export default function renderCashFlowPieChart(
     window.cashFlowPieChart.destroy();
   }
 
-  // Scale all values by time duration (in years)
-  const scaledMortgage = mortgagePaymentAnnual * timeDuration;
-  const scaledExpenses = operatingExpenses * timeDuration;
-  const scaledCashFlow = cashFlowAnnual * timeDuration;
-
   const labels = ['Mortgage Payments', 'Operating Expenses'];
-  const values = [scaledMortgage, scaledExpenses];
+  const values = [cumulativeMortgage, cumulativeExpenses];
   const colors = ['#55CBE5', '#F39655'];
 
-  const netLabel = scaledCashFlow >= 0 ? 'Net Profit' : 'Net Loss';
-  const netColor = scaledCashFlow >= 0 ? '#4CAF50' : '#FF5722';
+  const netLabel = cumulativeNetCashFlow >= 0 ? 'Net Profit' : 'Net Loss';
+  const netColor = cumulativeNetCashFlow >= 0 ? '#4CAF50' : '#FF5722';
 
   labels.push(netLabel);
-  values.push(Math.abs(scaledCashFlow));
+  values.push(Math.abs(cumulativeNetCashFlow));
   colors.push(netColor);
 
   const totalFlow = values.reduce((acc, val) => acc + val, 0);
