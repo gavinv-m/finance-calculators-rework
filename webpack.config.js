@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'finance-tools-wp'),
+    path: path.resolve(__dirname, 'docs'),
     assetModuleFilename: 'assets/[name][ext]',
   },
   performance: {

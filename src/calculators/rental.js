@@ -216,6 +216,7 @@ export default function calculateRentalProperty() {
     monthlyUtilities +
     monthlyRenovations;
 
+  // Rent projections
   for (let i = 0; i < timeDuration; i++) {
     let yearRent = monthlyRent * 12 * Math.pow(1 + rentGrowth / 100, i);
     let yearVacancyLoss = yearRent * (vacancyRate / 100);
@@ -223,6 +224,40 @@ export default function calculateRentalProperty() {
     rentProjections.push(yearRent);
     adjustedRentProjections.push(yearAdjustedRent);
   }
+
+  let expenseProjections = [];
+  let cashFlowProjections = [];
+  let expenseGrowthRate = 2;
+
+  // NEW: Multi-year projections for the chart
+  for (let i = 0; i < timeDuration; i++) {
+    let yearAdjustedRent = adjustedRentProjections[i];
+
+    // This calculates expenses for each individual year
+    let yearOperatingExpenses =
+      propertyTaxes * Math.pow(1 + expenseGrowthRate / 100, i) +
+      insuranceCosts * Math.pow(1 + expenseGrowthRate / 100, i) +
+      maintenanceCosts * Math.pow(1 + expenseGrowthRate / 100, i) +
+      yearAdjustedRent * (managementFees / 100) + // Grows with that year's rent
+      utilities * Math.pow(1 + expenseGrowthRate / 100, i) +
+      renovations;
+
+    expenseProjections.push(yearOperatingExpenses);
+  }
+
+  // Calculate cumulative totals
+  let cumulativeIncome = adjustedRentProjections.reduce(
+    (sum, income) => sum + income,
+    0
+  );
+  let cumulativeExpenses = expenseProjections.reduce(
+    (sum, expense) => sum + expense,
+    0
+  );
+  let cumulativeCashFlow = cashFlowProjections.reduce(
+    (sum, cashFlow) => sum + cashFlow,
+    0
+  );
 
   // ✅ Display Results
   document.getElementById('loanAmount').innerText = formatNumber(loanAmount);
@@ -250,11 +285,12 @@ export default function calculateRentalProperty() {
     dsrElement.style.backgroundColor = 'rgb(248, 109, 109)'; // Reset to default if DSR is not > 1.2
   }
   renderPortfolioPieChart(
-    adjustedRentIncome,
-    operatingExpenses,
-    cashFlowAnnual,
+    cumulativeIncome,
+    cumulativeExpenses,
+    cumulativeCashFlow,
     timeDuration
   );
+
   renderCashFlowPieChart(
     annualMortgagePayment,
     operatingExpenses,

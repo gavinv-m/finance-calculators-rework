@@ -10,9 +10,9 @@ Chart.register(PieController, ArcElement, Tooltip, Legend, Title);
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function renderPortfolioPieChart(
-  adjustedRentIncome,
-  operatingExpenses,
-  cashFlowAnnual,
+  cumulativeIncome,
+  cumulativeExpenses,
+  cumulativeCashFlow,
   timeDuration = 1
 ) {
   const ctx = document.getElementById('portfolioPieChart').getContext('2d');
@@ -21,22 +21,9 @@ export default function renderPortfolioPieChart(
     window.portfolioPieChart.destroy();
   }
 
-  // Scale values based on selected duration
-  const scaledIncome = adjustedRentIncome * timeDuration;
-  const scaledExpenses = operatingExpenses * timeDuration;
-  const scaledCashFlow = cashFlowAnnual * timeDuration;
-
   const labels = ['Income', 'Expenses'];
-  const values = [scaledIncome, scaledExpenses];
+  const values = [cumulativeIncome, cumulativeExpenses];
   const colors = ['#B77CE9', '#55CBE5'];
-
-  const profitLabel = scaledCashFlow >= 0 ? 'Profit' : 'Loss';
-  const profitValue = Math.abs(scaledCashFlow);
-  const profitColor = scaledCashFlow >= 0 ? '#3B8D21' : '#F39655';
-
-  labels.push(profitLabel);
-  values.push(profitValue);
-  colors.push(profitColor);
 
   const total = values.reduce((a, b) => a + b, 0);
 
@@ -70,7 +57,7 @@ export default function renderPortfolioPieChart(
         },
         title: {
           display: true,
-          text: `Portfolio Composition (Over ${timeDuration} Year${
+          text: `Income vs Expenses (Over ${timeDuration} Year${
             timeDuration > 1 ? 's' : ''
           })`,
           font: {
