@@ -52,6 +52,7 @@ export default function calculateHouseFlip() {
   let monthlyRate = interestRate / 100 / 12;
   let loanAmount =
     downPaymentType === 'purchaseAndReno' ? purchase + reno : purchase;
+  loanAmount = loanAmount - downPayment;
   let proratedMaintenance = (annualMaintenance / 12) * months;
   let proratedUtilities = (annualUtilities / 12) * months;
   let proratedTaxes = (annualPropertyTaxes / 12) * months;
