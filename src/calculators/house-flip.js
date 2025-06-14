@@ -202,10 +202,25 @@ export default function calculateHouseFlip() {
   let netProfitEl = document.getElementById('netProfit');
   let netprocard = document.querySelector('.netprocard');
   let netprocardhead = document.querySelector('.netprocardhead');
-  netProfitEl.style.color = netProfit > 0 ? 'black' : 'black'; // gold if profit, red if loss
+  netProfitEl.style.color = netProfit > 0 ? 'black' : 'black';
   netprocardhead.style.color = netProfit > 0 ? 'black' : '#d0b870'; // gold if profit, red if loss
   netprocard.style.background =
     netProfit === 0 ? '#ffffff' : netProfit > 0 ? '#d0b870' : '#f86d6d';
+
+  let cashOnCashReturnEl = document.getElementById('cashOnCashReturn');
+  let cashOnCashCard = document.querySelector('.cash-on-cash-card');
+  let cashOnCashCardHead = document.querySelector('.cash-on-cash-head');
+  let cashOnCashReturnValue = parseFloat(cashOnCashReturnEl.textContent) || 0;
+  cashOnCashReturnEl.style.color =
+    cashOnCashReturnValue > 0 ? 'black' : 'black';
+  cashOnCashCardHead.style.color =
+    cashOnCashReturnValue > 0 ? 'black' : '#d0b870';
+  cashOnCashCard.style.background =
+    cashOnCashReturnValue === 0
+      ? '#ffffff'
+      : cashOnCashReturnValue > 0
+      ? '#d0b870'
+      : '#f86d6d';
 
   let profitMarginEl = document.getElementById('profitMargin');
   let promarcard = document.querySelector('.promarcard');
