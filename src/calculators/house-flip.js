@@ -103,9 +103,7 @@ export default function calculateHouseFlip() {
     proratedTaxes +
     proratedInsurance +
     proratedMaintenance +
-    proratedUtilities +
-    loanInterest +
-    gapFundingFees;
+    proratedUtilities;
 
   // ✅ Break-even Years Calculation
   let monthlyRentalProfit = (
