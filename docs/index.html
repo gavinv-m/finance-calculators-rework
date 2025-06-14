@@ -231,10 +231,8 @@
                         id="downPaymentType"
                         aria-label="Down payment base"
                       >
-                        <option value="purchase" selected>
-                          Purchase Price Only
-                        </option>
-                        <option value="purchaseAndReno">
+                        <option value="purchase">Purchase Price Only</option>
+                        <option value="purchaseAndReno" selected>
                           Purchase + Reno (100% Financed)
                         </option>
                       </select>
@@ -324,7 +322,7 @@
                           id="calculateBtn"
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
-                          data-bs-original-title="**Holding Costs** are the ongoing expenses incurred while owning the property, including mortgage payments, property taxes, insurance, utilities, and maintenance."
+                          data-bs-original-title="**Holding Costs** are the ongoing expenses incurred over the project duration, including property taxes, insurance, utilities, and maintenance."
                           >i</span
                         >
                       </div>
@@ -1212,12 +1210,6 @@
                       <div class="result" id="displayedAddress"></div>
                     </div>
                   </div>
-                  <!-- <div class="col-md-5 col-sm-12">
-                    <div class="card p-3 card-2-inner grossProfitcard">
-                      <h4 class="grosspro">Gross Profit:</h4>
-                      <div class="result" id="grossProfit"></div>
-                    </div>
-                  </div> -->
 
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner">
@@ -1227,40 +1219,49 @@
                   </div>
 
                   <div class="col-md-5 col-sm-12">
-                    <div class="card p-3 card-2-inner netprocard">
-                      <h4 class="netprocardhead">Net Profit:</h4>
-                      <div class="result" id="netProfit"></div>
+                    <div class="card p-3 card-2-inner">
+                      <div class="funding-label financed-label">Financed</div>
+                      <h4>Loan Amount:</h4>
+                      <div class="result" id="loanAmountValue"></div>
                     </div>
                   </div>
 
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner">
+                      <div class="funding-label cash-label">Cash</div>
                       <h4>Total Cash Invested:</h4>
                       <div class="result" id="totalCashInvested"></div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-sm-12">
-                    <div class="card p-3 card-2-inner promarcard">
-                      <h4 class="promarcardhead">Profit Margin:</h4>
-                      <div class="result" id="profitMargin"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-5 col-sm-12">
-                    <div class="card p-3 card-2-inner monthlyHoldingCostCard">
-                      <h4 class="mhctext">Monthly holding costs:</h4>
-                      <div class="result" id="monthlyHoldingCost"></div>
-                    </div>
-                  </div>
+
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner">
+                      <div class="funding-label cash-label">Cash</div>
+                      <h4>Interest Expense:</h4>
+                      <div class="result" id="houseInterestAmt"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5 col-sm-12">
+                    <div class="card p-3 card-2-inner">
+                      <div class="funding-label cash-label">Cash</div>
                       <h4 class="">Gap Cost:</h4>
                       <div class="result" id="calculatedGapCost"></div>
                     </div>
                   </div>
+
+                  <div class="col-md-5 col-sm-12">
+                    <div class="card p-3 card-2-inner monthlyHoldingCostCard">
+                      <div class="funding-label cash-label">Cash</div>
+                      <h4 class="mhctext">Monthly holding costs:</h4>
+                      <div class="result" id="monthlyHoldingCost"></div>
+                    </div>
+                  </div>
+
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner">
-                      <h4>Cash-on-Cash Return:</h4>
-                      <div class="result" id="cashOnCashReturn"></div>
+                      <h4>Resale Closing Costs:</h4>
+                      <div class="result" id="closingCostsAmt"></div>
                     </div>
                   </div>
 
@@ -1270,24 +1271,41 @@
                       <div class="result" id="breakEvenYears"></div>
                     </div>
                   </div>
-                  <!-- <div class="col-md-5 col-sm-12">
-                    <div class="card p-3 card-2-inner">
-                      <h4>Required ARV for target margin:</h4>
-                      <div class="result" id="requiredARV"></div>
-                    </div>
-                  </div> -->
+
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner">
                       <h4>Max Purchase Price:</h4>
                       <div class="result" id="maxPurchasePrice"></div>
                     </div>
                   </div>
+
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner rvfcard">
                       <h4 class="rvfcardhead">Rental Vs Flip:</h4>
                       <div class="result" id="rentalVsFlip"></div>
                     </div>
                   </div>
+
+                  <div class="col-md-5 col-sm-12">
+                    <div class="card p-3 card-2-inner cash-on-cash-card">
+                      <h4 class="cash-on-cash-head">Cash-on-Cash Return:</h4>
+                      <div class="result" id="cashOnCashReturn"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-sm-12">
+                    <div class="card p-3 card-2-inner netprocard">
+                      <h4 class="netprocardhead">Net Profit:</h4>
+                      <div class="result" id="netProfit"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5 col-sm-12">
+                    <div class="card p-3 card-2-inner promarcard">
+                      <h4 class="promarcardhead">Profit Margin:</h4>
+                      <div class="result" id="profitMargin"></div>
+                    </div>
+                  </div>
+
                   <div class="col-md-5 col-sm-12">
                     <div class="card p-3 card-2-inner dealCardd">
                       <h4 class="dealCarddhead">Deal?</h4>
