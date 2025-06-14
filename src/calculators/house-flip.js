@@ -92,7 +92,7 @@ export default function calculateHouseFlip() {
   let netProfit = arv - totalInvestment - resaleCosts;
 
   // ✅ Profit Margin & Cash-on-Cash Return
-  let profitMargin = arv > 0 ? (netProfit / arv) * 100 : 0;
+  let profitMargin = arv > 0 ? (netProfit / totalInvestment) * 100 : 0;
   let cashOnCashReturn =
     totalCashInvested > 0 ? (netProfit / totalCashInvested) * 100 : 0;
 
