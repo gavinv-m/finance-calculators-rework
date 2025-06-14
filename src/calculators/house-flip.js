@@ -183,6 +183,8 @@ export default function calculateHouseFlip() {
   document.getElementById('monthlyHoldingCost').innerText = `${formatNumber(
     monthlyHoldingCost
   )}`;
+  document.getElementById('closingCostsAmt').innerText =
+    formatNumber(resaleCosts);
   document.getElementById('displayedAddress').innerText = address
     ? `📍 ${address}`
     : '';
