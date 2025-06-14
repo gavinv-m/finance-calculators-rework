@@ -160,6 +160,10 @@ export default function calculateHouseFlip() {
   // ✅ Display Results
   document.getElementById('totalInvestment').innerText =
     formatNumber(totalInvestment);
+  document.getElementById('loanAmountValue').innerText =
+    formatNumber(loanAmount);
+  document.getElementById('houseInterestAmt').innerText =
+    formatNumber(loanInterest);
   document.getElementById('netProfit').innerText = formatNumber(netProfit);
   document.getElementById('totalCashInvested').innerText =
     formatNumber(totalCashInvested);
